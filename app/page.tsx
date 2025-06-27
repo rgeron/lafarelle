@@ -164,7 +164,7 @@ export default function HomePage() {
                     <AnimatedCounter end={15} suffix="+" />
                   </div>
                   <p className="font-mono text-sm text-gray-600 transition-colors duration-300 group-hover:text-gray-800">
-                    Années d'expérience
+                    Années d&apos;expérience
                   </p>
                 </div>
               </ScrollReveal>
@@ -343,8 +343,8 @@ export default function HomePage() {
             <ScrollReveal delay={600}>
               <div className="relative bg-white/10 p-8 mb-12 border-4 border-secondary/30 hover-glow transition-all duration-500 hover:bg-white/15">
                 <p className="text-xl mb-6 text-white/90 leading-relaxed">
-                  Discutons de vos projets IT lors d'une consultation gratuite de 30 minutes
-                </p>
+                  Discutons de vos projets IT lors d&apos;une consultation gratuite de 30 minutes
+                </p>  
                 <div className="absolute top-0 right-0 w-8 h-8 bg-secondary transition-all duration-300 hover:w-10 hover:h-10"></div>
                 <div className="absolute bottom-0 left-0 w-6 h-6 bg-secondary/60 transition-all duration-300 hover:w-8 hover:h-8"></div>
               </div>
@@ -359,5 +359,5 @@ export default function HomePage() {
         </div>
       </section>
     </div>
-  )
+  );  
 }
