@@ -30,229 +30,366 @@
   --radius-md: 0px;
   --radius-sm: 0px;
 
-  --animate-accordion-down: accordion-down 0.2s ease-out;
-  --animate-accordion-up: accordion-up 0.2s ease-out;
+  --animate-accordion-down: accordion-down 0.4s
+    cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --animate-accordion-up: accordion-up 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 @import "tailwindcss/preflight" layer(base);
 @import "tailwindcss/utilities" layer(utilities);
 
 @layer utilities {
-  /* Subtle animations */
+  /* Smooth entrance animations */
   .animate-fade-in {
-    animation: fadeIn 0.6s ease-out forwards;
+    animation: fadeIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
   }
 
   .animate-slide-up {
-    animation: slideUp 0.8s ease-out forwards;
+    animation: slideUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
 
   .animate-slide-in-left {
-    animation: slideInLeft 0.8s ease-out forwards;
+    animation: slideInLeft 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
 
   .animate-slide-in-right {
-    animation: slideInRight 0.8s ease-out forwards;
+    animation: slideInRight 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
 
   .animate-scale-in {
-    animation: scaleIn 0.6s ease-out forwards;
+    animation: scaleIn 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
   }
 
   .animate-float {
-    animation: float 6s ease-in-out infinite;
+    animation: float 8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
 
   .animate-pulse-subtle {
-    animation: pulseSubtle 3s ease-in-out infinite;
+    animation: pulseSubtle 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
 
   .animate-glow {
-    animation: glow 2s ease-in-out infinite alternate;
+    animation: glow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite alternate;
   }
 
-  /* Hover animations */
+  /* Enhanced hover animations */
   .hover-lift {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
 
   .hover-lift:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 25px rgba(29, 47, 73, 0.15);
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 12px 40px rgba(29, 47, 73, 0.2);
   }
 
   .hover-scale {
-    transition: transform 0.2s ease;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
 
   .hover-scale:hover {
-    transform: scale(1.02);
+    transform: scale(1.05);
   }
 
   .hover-glow {
-    transition: box-shadow 0.3s ease;
+    transition: box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
   .hover-glow:hover {
-    box-shadow: 0 0 20px rgba(178, 149, 80, 0.3);
+    box-shadow: 0 0 30px rgba(178, 149, 80, 0.4);
   }
 
-  /* Geometric animations */
+  /* Smooth geometric animations */
   .animate-draw-line {
-    animation: drawLine 1.5s ease-out forwards;
+    animation: drawLine 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
   }
 
   .animate-expand-width {
-    animation: expandWidth 1s ease-out forwards;
+    animation: expandWidth 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
 
   .animate-rotate-slow {
-    animation: rotateSlow 20s linear infinite;
+    animation: rotateSlow 25s linear infinite;
   }
 }
 
+/* Enhanced keyframe animations */
 @keyframes fadeIn {
-  from {
+  0% {
     opacity: 0;
+    transform: translateY(8px);
   }
-  to {
-    opacity: 1;
+  50% {
+    opacity: 0.5;
   }
-}
-
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
+  100% {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-@keyframes slideInLeft {
-  from {
+@keyframes slideUp {
+  0% {
     opacity: 0;
-    transform: translateX(-30px);
+    transform: translateY(40px) scale(0.98);
   }
-  to {
+  25% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.7;
+    transform: translateY(20px) scale(0.99);
+  }
+  100% {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px) scale(0.98);
+  }
+  25% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.7;
+    transform: translateX(-20px) scale(0.99);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
   }
 }
 
 @keyframes slideInRight {
-  from {
+  0% {
     opacity: 0;
-    transform: translateX(30px);
+    transform: translateX(40px) scale(0.98);
   }
-  to {
+  25% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.7;
+    transform: translateX(20px) scale(0.99);
+  }
+  100% {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateX(0) scale(1);
   }
 }
 
 @keyframes scaleIn {
-  from {
+  0% {
     opacity: 0;
-    transform: scale(0.95);
+    transform: scale(0.9) rotate(-1deg);
   }
-  to {
+  25% {
+    opacity: 0.3;
+    transform: scale(0.95) rotate(-0.5deg);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.02) rotate(0.5deg);
+  }
+  75% {
+    opacity: 0.9;
+    transform: scale(0.99) rotate(-0.2deg);
+  }
+  100% {
     opacity: 1;
-    transform: scale(1);
+    transform: scale(1) rotate(0deg);
   }
 }
 
 @keyframes float {
   0% {
-    transform: translateY(0px) translateX(0px) scale(1);
+    transform: translateY(0px) translateX(0px) scale(1) rotate(0deg);
   }
-  25% {
-    transform: translateY(-8px) translateX(4px) scale(1.05);
+  20% {
+    transform: translateY(-8px) translateX(3px) scale(1.02) rotate(1deg);
   }
-  50% {
-    transform: translateY(-12px) translateX(-2px) scale(1);
+  40% {
+    transform: translateY(-12px) translateX(-2px) scale(1) rotate(-0.5deg);
   }
-  75% {
-    transform: translateY(-4px) translateX(-6px) scale(0.95);
+  60% {
+    transform: translateY(-6px) translateX(-4px) scale(0.98) rotate(0.8deg);
+  }
+  80% {
+    transform: translateY(-10px) translateX(2px) scale(1.01) rotate(-0.3deg);
   }
   100% {
-    transform: translateY(0px) translateX(0px) scale(1);
+    transform: translateY(0px) translateX(0px) scale(1) rotate(0deg);
   }
 }
 
 @keyframes pulseSubtle {
-  0%,
-  100% {
+  0% {
     opacity: 0.4;
+    transform: scale(1);
+  }
+  25% {
+    opacity: 0.6;
+    transform: scale(1.02);
   }
   50% {
     opacity: 0.8;
+    transform: scale(1.05);
+  }
+  75% {
+    opacity: 0.6;
+    transform: scale(1.02);
+  }
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
   }
 }
 
 @keyframes glow {
-  from {
+  0% {
     box-shadow: 0 0 5px rgba(178, 149, 80, 0.2);
+    filter: brightness(1);
   }
-  to {
+  25% {
+    box-shadow: 0 0 10px rgba(178, 149, 80, 0.3);
+    filter: brightness(1.05);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(178, 149, 80, 0.5);
+    filter: brightness(1.1);
+  }
+  75% {
     box-shadow: 0 0 15px rgba(178, 149, 80, 0.4);
+    filter: brightness(1.05);
+  }
+  100% {
+    box-shadow: 0 0 8px rgba(178, 149, 80, 0.3);
+    filter: brightness(1);
   }
 }
 
 @keyframes drawLine {
-  from {
+  0% {
     width: 0;
+    opacity: 0;
   }
-  to {
+  25% {
+    width: 25%;
+    opacity: 0.5;
+  }
+  50% {
+    width: 50%;
+    opacity: 0.8;
+  }
+  75% {
+    width: 75%;
+    opacity: 0.9;
+  }
+  100% {
     width: 100%;
+    opacity: 1;
   }
 }
 
 @keyframes expandWidth {
-  from {
+  0% {
     width: 0;
+    transform: scaleY(0.8);
   }
-  to {
+  25% {
+    width: 25%;
+    transform: scaleY(0.9);
+  }
+  50% {
+    width: 50%;
+    transform: scaleY(1.05);
+  }
+  75% {
+    width: 75%;
+    transform: scaleY(0.98);
+  }
+  100% {
     width: 100%;
+    transform: scaleY(1);
   }
 }
 
 @keyframes rotateSlow {
-  from {
-    transform: rotate(0deg);
+  0% {
+    transform: rotate(0deg) scale(1);
   }
-  to {
-    transform: rotate(360deg);
+  25% {
+    transform: rotate(90deg) scale(1.02);
+  }
+  50% {
+    transform: rotate(180deg) scale(1);
+  }
+  75% {
+    transform: rotate(270deg) scale(0.98);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
   }
 }
 
+/* Enhanced accordion animations */
 @keyframes accordion-down {
   from {
     height: 0;
+    opacity: 0;
+    transform: scaleY(0.95);
   }
   to {
     height: var(--radix-accordion-content-height);
+    opacity: 1;
+    transform: scaleY(1);
   }
 }
 
 @keyframes accordion-up {
   from {
     height: var(--radix-accordion-content-height);
+    opacity: 1;
+    transform: scaleY(1);
   }
   to {
     height: 0;
+    opacity: 0;
+    transform: scaleY(0.95);
   }
 }
 
-/* Smooth transitions for all interactive elements */
-* {
-  transition-property: color, background-color, border-color,
-    text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter,
-    backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
+/* Selective smooth transitions - avoid conflicting with component animations */
+button,
+a,
+input,
+select,
+textarea,
+[role="button"] {
+  transition-property: color, background-color, border-color, opacity,
+    box-shadow;
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-duration: 200ms;
+}
+
+/* Only apply transform transitions to elements that don't use inline styles */
+.hover-lift,
+.hover-scale,
+.hover-glow,
+[class*="group"]:not([style*="transform"]) {
+  transition-property: transform, box-shadow;
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition-duration: 300ms;
+}
+
+/* Respect Tailwind's transition classes */
+[class*="transition"],
+[class*="duration"],
+[class*="ease"] {
+  /* Let Tailwind handle these */
 }
 
 /* Reduce motion for users who prefer it */
@@ -263,5 +400,6 @@
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
