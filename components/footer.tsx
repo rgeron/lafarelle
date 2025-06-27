@@ -19,7 +19,7 @@ export default function Footer() {
             </div>
 
             <p className="font-mono text-sm text-white/80 mb-8 leading-relaxed max-w-md">
-              Votre partenaire de confiance pour l'optimisation de votre gouvernance IT. Conseil DSI, Software Asset
+              Votre partenaire de confiance pour l&apos;optimisation de votre gouvernance IT. Conseil DSI, Software Asset
               Management et veille technologique.
             </p>
 

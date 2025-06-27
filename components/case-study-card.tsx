@@ -96,7 +96,7 @@ export default function CaseStudyCard({
           <div className="bg-gray-50 p-6 relative">
             <div className="absolute top-0 left-0 w-full h-1 bg-secondary"></div>
             <div className="font-mono text-xs text-primary mb-2 tracking-wider">TÉMOIGNAGE_CLIENT</div>
-            <p className="font-mono text-sm text-gray-700 italic leading-relaxed">"{testimonial}"</p>
+            <p className="font-mono text-sm text-gray-700 italic leading-relaxed">&quot;{testimonial}&quot;</p>
           </div>
         </div>
       </div>

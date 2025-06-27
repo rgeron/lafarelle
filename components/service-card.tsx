@@ -63,7 +63,7 @@ export default function ServiceCard({ title, description, features, icon: Icon, 
           {/* Features with custom bullets */}
           <div className="space-y-3">
             <div className="font-mono text-xs font-bold text-primary tracking-wider mb-4 transition-colors duration-300 group-hover:text-secondary">
-              PRESTATIONS_INCLUSES:
+              PRESTATIONS INCLUSES:
             </div>
             {features.map((feature, idx) => (
               <div key={idx} className="flex items-start group/item">

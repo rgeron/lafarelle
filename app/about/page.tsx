@@ -9,13 +9,13 @@ export default function AboutPage() {
     {
       title: "EXCELLENCE",
       description:
-        "Nous visons l'excellence dans chaque mission que nous entreprenons, avec une approche rigoureuse et des standards élevés.",
+        "Nous visons l&apos;excellence dans chaque mission que nous entreprenons, avec une approche rigoureuse et des standards élevés.",
       icon: Target,
     },
     {
       title: "TRANSPARENCE",
       description:
-        "Une communication claire et honnête avec nos clients, basée sur la confiance et l'intégrité professionnelle.",
+        "Une communication claire et honnête avec nos clients, basée sur la confiance et l&apos;intégrité professionnelle.",
       icon: Eye,
     },
     {
@@ -26,7 +26,7 @@ export default function AboutPage() {
     {
       title: "PARTENARIAT",
       description:
-        "Une relation de confiance sur le long terme, construite sur l'écoute et l'accompagnement personnalisé.",
+        "Une relation de confiance sur le long terme, construite sur l&apos;écoute et l&apos;accompagnement personnalisé.",
       icon: Handshake,
     },
   ]
@@ -73,14 +73,14 @@ export default function AboutPage() {
 
               <div className="relative z-10">
                 <p className="text-xl mb-8 leading-relaxed text-gray-700">
-                  Fondée par des experts passionnés de technologie, LAFARELLE s'est imposée comme un acteur de référence
+                  Fondée par des experts passionnés de technologie, LAFARELLE s&apos;est imposée comme un acteur de référence
                   dans le conseil DSI et le Software Asset Management.
                 </p>
                 <p className="text-lg leading-relaxed text-gray-700">
                   Notre approche unique combine expertise technique, vision stratégique et accompagnement humain pour
                   transformer les défis IT en opportunités de croissance. Nous croyons fermement que la maîtrise des
-                  actifs logiciels et une gouvernance IT optimale sont les clés du succès dans l'économie numérique
-                  d'aujourd'hui.
+                  actifs logiciels et une gouvernance IT optimale sont les clés du succès dans l&apos;économie numérique
+                  d&apos;aujourd&apos;hui.
                 </p>
               </div>
             </div>
@@ -103,8 +103,8 @@ export default function AboutPage() {
               <div className="absolute bottom-0 left-0 w-8 h-8 bg-secondary/60"></div>
 
               <p className="text-2xl text-gray-700 leading-relaxed italic">
-                "Accompagner les entreprises dans leur maîtrise technologique en proposant des solutions innovantes et
-                sur mesure qui optimisent leurs performances IT tout en réduisant leurs risques et leurs coûts."
+                &quot;Accompagner les entreprises dans leur maîtrise technologique en proposant des solutions innovantes
+                et sur mesure qui optimisent leurs performances IT tout en réduisant leurs risques et leurs coûts.&quot;
               </p>
             </div>
           </div>

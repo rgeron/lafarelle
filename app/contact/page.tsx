@@ -60,7 +60,7 @@ export default function ContactPage() {
                   {/* Form Header */}
                   <div className="bg-primary text-white p-8 relative z-10">
                     <div className="flex items-center justify-between mb-4">
-                      <div className="font-mono text-xs tracking-wider text-secondary">FORM_CONSULTATION</div>
+                      <div className="font-mono text-xs tracking-wider text-secondary">FORM CONSULTATION</div>
                       <Send size={24} className="text-secondary" />
                     </div>
                     <h3 className="font-mono text-xl font-bold tracking-wide">DEMANDE DE CONSULTATION</h3>
@@ -161,8 +161,8 @@ export default function ContactPage() {
                       <div className="flex items-start space-x-3">
                         <div className="w-4 h-4 border-2 border-secondary mt-1 flex-shrink-0"></div>
                         <span className="font-mono text-xs text-gray-600 leading-relaxed">
-                          J'accepte d'être contacté par LAFARELLE concernant ma demande et de recevoir des informations
-                          sur vos services. *
+                          J&apos;accepte d&apos;être contacté par LAFARELLE concernant ma demande et de recevoir des
+                          informations sur vos services. *
                         </span>
                       </div>
 
@@ -259,8 +259,8 @@ export default function ContactPage() {
                     </div>
 
                     <p className="font-mono text-sm text-white/90 mb-6 leading-relaxed">
-                      Profitez d'un premier échange gratuit de 30 minutes pour analyser vos besoins et identifier les
-                      opportunités d'optimisation de votre gouvernance IT.
+                      Profitez d&apos;un premier échange gratuit de 30 minutes pour analyser vos besoins et identifier
+                      les opportunités d&apos;optimisation de votre gouvernance IT.
                     </p>
 
                     <div className="space-y-3">
@@ -306,7 +306,7 @@ export default function ContactPage() {
               </h2>
 
               <p className="text-xl text-gray-700 mb-10 max-w-2xl mx-auto leading-relaxed">
-                Ne laissez plus les défis IT freiner votre croissance. Contactez-nous dès aujourd'hui pour une
+                Ne laissez plus les défis IT freiner votre croissance. Contactez-nous dès aujourd&apos;hui pour une
                 consultation gratuite.
               </p>
 

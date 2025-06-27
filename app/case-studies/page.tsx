@@ -11,7 +11,7 @@ export default function CaseStudiesPage() {
       sector: "Banque & Finance",
       icon: Building2,
       problem:
-        "Une grande banque européenne faisait face à des coûts logiciels en constante augmentation et des risques de non-conformité avec les éditeurs majeurs. L'absence de visibilité sur les licences utilisées générait des surcoûts importants.",
+        "Une grande banque européenne faisait face à des coûts logiciels en constante augmentation et des risques de non-conformité avec les éditeurs majeurs. L&apos;absence de visibilité sur les licences utilisées générait des surcoûts importants.",
       solution:
         "Audit complet des licences existantes, mise en place d'un processus de gouvernance SAM structuré, implémentation d'outils de monitoring automatisés et négociation stratégique avec les éditeurs pour optimiser les contrats.",
       results: [
@@ -41,7 +41,7 @@ export default function CaseStudiesPage() {
         "L'accompagnement de LAFARELLE a été déterminant dans la réussite de notre transformation digitale. Leur approche méthodique et leur expertise technique nous ont permis d'atteindre nos objectifs dans les délais.",
     },
     {
-      title: "AUDIT_DE_CONFORMITE_SECTEUR_PUBLIC",
+      title: "AUDIT_DECONFORMITE_SECTEUR_PUBLIC",
       sector: "Secteur Public",
       icon: Landmark,
       problem:

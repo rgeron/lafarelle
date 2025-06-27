@@ -93,7 +93,7 @@ export default function EnhancedCaseStudyCard({
               <div className="w-6 h-6 bg-blue-500 mr-4 relative">
                 <div className="absolute bottom-0 left-0 w-0 h-0 border-r-[6px] border-r-white border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent"></div>
               </div>
-              <h4 className="font-mono text-sm font-bold text-primary tracking-wider">SOLUTION_IMPLEMENTEE</h4>
+              <h4 className="font-mono text-sm font-bold text-primary tracking-wider">SOLUTION IMPLEMENTÉE</h4>
             </div>
             <div className="relative bg-blue-50 p-6 border-l-4 border-blue-500">
               <p className="font-mono text-sm text-gray-700 leading-relaxed">{solution}</p>
@@ -107,7 +107,7 @@ export default function EnhancedCaseStudyCard({
               <div className="w-6 h-6 bg-green-500 mr-4 relative">
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-white"></div>
               </div>
-              <h4 className="font-mono text-sm font-bold text-primary tracking-wider">RESULTATS_OBTENUS</h4>
+              <h4 className="font-mono text-sm font-bold text-primary tracking-wider">RÉSULTATS OBTENUS</h4>
             </div>
             <div className="relative bg-green-50 p-6 border-l-4 border-green-500">
               <div className="grid gap-3">
@@ -133,7 +133,7 @@ export default function EnhancedCaseStudyCard({
               <div className="w-2 h-2 bg-secondary mr-2"></div>
               TEMOIGNAGE_CLIENT
             </div>
-            <p className="font-mono text-sm text-gray-700 italic leading-relaxed">"{testimonial}"</p>
+            <p className="font-mono text-sm text-gray-700 italic leading-relaxed">&quot;{testimonial}&quot;</p>
 
             {/* Quote marks as geometric elements */}
             <div className="absolute top-6 right-6 w-6 h-6 border-4 border-secondary opacity-20"></div>
