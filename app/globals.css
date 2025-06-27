@@ -165,12 +165,20 @@
 }
 
 @keyframes float {
-  0%,
-  100% {
-    transform: translateY(0px);
+  0% {
+    transform: translateY(0px) translateX(0px) scale(1);
+  }
+  25% {
+    transform: translateY(-8px) translateX(4px) scale(1.05);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-12px) translateX(-2px) scale(1);
+  }
+  75% {
+    transform: translateY(-4px) translateX(-6px) scale(0.95);
+  }
+  100% {
+    transform: translateY(0px) translateX(0px) scale(1);
   }
 }
 
