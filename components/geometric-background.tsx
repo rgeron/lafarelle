@@ -1,9 +1,16 @@
+"use client";
+
+import { motion } from "motion/react";
+
 interface GeometricBackgroundProps {
-  variant?: "hero" | "section" | "card" | "minimal"
-  className?: string
+  variant?: "hero" | "section" | "card" | "minimal";
+  className?: string;
 }
 
-export default function GeometricBackground({ variant = "section", className = "" }: GeometricBackgroundProps) {
+export default function GeometricBackground({
+  variant = "section",
+  className = "",
+}: GeometricBackgroundProps) {
   const patterns = {
     hero: (
       <div className={`absolute inset-0 overflow-hidden ${className}`}>
@@ -20,10 +27,22 @@ export default function GeometricBackground({ variant = "section", className = "
         <div className="absolute top-0 left-0 w-0 h-0 border-r-[100px] border-r-transparent border-t-[100px] border-t-secondary/10"></div>
         <div className="absolute bottom-0 right-0 w-0 h-0 border-l-[80px] border-l-transparent border-b-[80px] border-b-secondary/15"></div>
 
-        {/* Floating squares - seulement les petits éléments animés */}
-        <div className="absolute top-1/3 left-1/4 w-3 h-3 bg-secondary/30 transform rotate-12 animate-pulse-subtle"></div>
-        <div className="absolute top-2/3 right-1/3 w-2 h-2 bg-secondary/40 animate-float"></div>
-        <div className="absolute bottom-1/4 left-1/3 w-4 h-4 border border-secondary/30 transform -rotate-12 animate-pulse-subtle"></div>
+        {/* Floating squares – désormais animées avec Motion */}
+        <motion.div
+          className="absolute top-1/3 left-1/4 w-3 h-3 bg-secondary/30 rotate-12"
+          animate={{ scale: [1, 1.1, 1], opacity: [0.8, 1, 0.8] }}
+          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute top-2/3 right-1/3 w-2 h-2 bg-secondary/40"
+          animate={{ y: [0, -8, 0], x: [0, 3, 0] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute bottom-1/4 left-1/3 w-4 h-4 border border-secondary/30 -rotate-12"
+          animate={{ scale: [1, 1.12, 1], opacity: [1, 0.6, 1] }}
+          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+        />
       </div>
     ),
 
@@ -70,7 +89,7 @@ export default function GeometricBackground({ variant = "section", className = "
         <div className="absolute bottom-0 right-0 w-8 h-8 border-l border-t border-secondary/20"></div>
       </div>
     ),
-  }
+  };
 
-  return patterns[variant]
+  return patterns[variant];
 }

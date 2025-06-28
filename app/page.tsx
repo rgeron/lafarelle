@@ -1,12 +1,13 @@
-import CustomButton from "@/components/custom-button"
-import ProblemCard from "@/components/problem-card"
-import SolutionCard from "@/components/solution-card"
-import GeometricBackground from "@/components/geometric-background"
-import ScrollReveal from "@/components/scroll-reveal"
-import AnimatedCounter from "@/components/animated-counter"
-import FloatingElements from "@/components/floating-elements"
-import { Target, Shield, TrendingUp, Users } from "lucide-react"
-import SectionSeparator from "@/components/section-separator"
+import AnimatedCounter from "@/components/animated-counter";
+import { AnimatedElement } from "@/components/animated-elements";
+import CustomButton from "@/components/custom-button";
+import FloatingElements from "@/components/floating-elements";
+import GeometricBackground from "@/components/geometric-background";
+import ProblemCard from "@/components/problem-card";
+import ScrollReveal from "@/components/scroll-reveal";
+import SectionSeparator from "@/components/section-separator";
+import SolutionCard from "@/components/solution-card";
+import { Shield, Target, TrendingUp, Users } from "lucide-react";
 
 export default function HomePage() {
   const problems = [
@@ -16,7 +17,7 @@ export default function HomePage() {
     "Difficultés à suivre l'évolution technologique ?",
     "Manque d'expertise interne en gouvernance IT ?",
     "Processus de gestion des actifs logiciels inefficaces ?",
-  ]
+  ];
 
   const solutions = [
     {
@@ -56,7 +57,7 @@ export default function HomePage() {
         "Accompagnement personnalisé",
       ],
     },
-  ]
+  ];
 
   return (
     <div className="min-h-screen font-mono">
@@ -84,7 +85,10 @@ export default function HomePage() {
           <div className="absolute top-0 right-0">
             <div className="w-40 h-40 border-4 border-secondary/20 transform rotate-45 translate-x-20 -translate-y-20"></div>
             <div className="absolute top-8 right-8 w-24 h-24 bg-secondary/10 transform rotate-45"></div>
-            <div className="absolute top-16 right-16 w-16 h-16 border-2 border-secondary/30 transform rotate-45 animate-pulse-subtle"></div>
+            <AnimatedElement
+              variant="pulse"
+              className="absolute top-16 right-16 w-16 h-16 border-2 border-secondary/30 rotate-45"
+            />
           </div>
         </div>
 
@@ -94,7 +98,9 @@ export default function HomePage() {
             <ScrollReveal delay={200}>
               <div className="relative mb-12">
                 <div className="inline-block bg-secondary text-primary px-8 py-4 relative hover-glow transition-all duration-300">
-                  <span className="text-sm font-bold tracking-wider">LAFARELLE SYSTEMS V2.0</span>
+                  <span className="text-sm font-bold tracking-wider">
+                    LAFARELLE SYSTEMS V2.0
+                  </span>
                   {/* Corner cuts */}
                   <div className="absolute top-0 left-0 w-0 h-0 border-r-[12px] border-r-transparent border-t-[12px] border-t-primary transition-all duration-300 hover:border-r-[16px] hover:border-t-[16px]"></div>
                   <div className="absolute bottom-0 right-0 w-0 h-0 border-l-[12px] border-l-transparent border-b-[12px] border-b-primary transition-all duration-300 hover:border-l-[16px] hover:border-b-[16px]"></div>
@@ -109,11 +115,15 @@ export default function HomePage() {
                 <span className="text-secondary relative">
                   GOUVERNANCE IT
                   {/* Underline accent */}
-                  <div className="absolute bottom-0 left-0 w-full h-2 bg-secondary/30 animate-expand-width"></div>
-                  <div
-                    className="absolute bottom-2 left-0 w-3/4 h-1 bg-secondary/50 animate-expand-width"
-                    style={{ animationDelay: "0.5s" }}
-                  ></div>
+                  <AnimatedElement
+                    variant="expandX"
+                    className="absolute bottom-0 left-0 w-full h-2 bg-secondary/30"
+                  />
+                  <AnimatedElement
+                    variant="expandX"
+                    delay={0.5}
+                    className="absolute bottom-2 left-0 w-3/4 h-1 bg-secondary/50"
+                  />
                 </span>
               </h1>
             </ScrollReveal>
@@ -122,12 +132,14 @@ export default function HomePage() {
               <div className="max-w-4xl mb-12">
                 <div className="relative bg-white/10 p-8 border-l-8 border-secondary hover-glow transition-all duration-500 hover:bg-white/15">
                   <p className="text-xl lg:text-2xl text-white/90 leading-relaxed mb-4">
-                    Conseil DSI, veille technologique et Software Asset Management pour une gestion optimale de vos
-                    actifs logiciels
+                    Conseil DSI, veille technologique et Software Asset
+                    Management pour une gestion optimale de vos actifs logiciels
                   </p>
                   <p className="text-base text-white/80 leading-relaxed">
-                    LAFARELLE accompagne les entreprises dans leur transformation digitale grâce à une expertise pointue
-                    en conseil DSI et une approche innovante du Software Asset Management.
+                    LAFARELLE accompagne les entreprises dans leur
+                    transformation digitale grâce à une expertise pointue en
+                    conseil DSI et une approche innovante du Software Asset
+                    Management.
                   </p>
 
                   {/* Corner accents */}
@@ -203,9 +215,18 @@ export default function HomePage() {
 
         {/* Additional geometric elements */}
         <div className="absolute inset-0">
-          <div className="absolute top-10 left-10 w-16 h-16 border-4 border-primary/10 transform rotate-45 animate-float"></div>
-          <div className="absolute bottom-10 right-10 w-12 h-12 bg-secondary/10 transform -rotate-12 animate-pulse-subtle"></div>
-          <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-secondary/20 to-transparent animate-pulse-subtle"></div>
+          <AnimatedElement
+            variant="float"
+            className="absolute top-10 left-10 w-16 h-16 border-4 border-primary/10 rotate-45"
+          />
+          <AnimatedElement
+            variant="pulse"
+            className="absolute bottom-10 right-10 w-12 h-12 bg-secondary/10 -rotate-12"
+          />
+          <AnimatedElement
+            variant="pulse"
+            className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-secondary/20 to-transparent"
+          />
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
@@ -215,7 +236,9 @@ export default function HomePage() {
               <ScrollReveal delay={200}>
                 <div className="relative inline-block mb-8">
                   <div className="bg-white text-primary px-8 py-4 relative hover-glow transition-all duration-300">
-                    <span className="text-sm font-bold tracking-wider">DIAGNOSTIC ENTREPRISE V1.0</span>
+                    <span className="text-sm font-bold tracking-wider">
+                      DIAGNOSTIC ENTREPRISE V1.0
+                    </span>
                     {/* Geometric accents */}
                     <div className="absolute -top-2 -left-2 w-4 h-4 bg-secondary transition-all duration-300 hover:w-6 hover:h-6"></div>
                     <div className="absolute -bottom-2 -right-2 w-4 h-4 bg-secondary transition-all duration-300 hover:w-6 hover:h-6"></div>
@@ -229,11 +252,15 @@ export default function HomePage() {
                   <br />
                   <span className="text-secondary relative">
                     FACE A CES DEFIS ?{/* Accent lines */}
-                    <div className="absolute -bottom-4 left-0 w-full h-1 bg-secondary/30 animate-expand-width"></div>
-                    <div
-                      className="absolute -bottom-6 left-1/4 w-1/2 h-0.5 bg-secondary/50 animate-expand-width"
-                      style={{ animationDelay: "0.5s" }}
-                    ></div>
+                    <AnimatedElement
+                      variant="expandX"
+                      className="absolute -bottom-4 left-0 w-full h-1 bg-secondary/30"
+                    />
+                    <AnimatedElement
+                      variant="expandX"
+                      delay={0.5}
+                      className="absolute -bottom-6 left-1/4 w-1/2 h-0.5 bg-secondary/50"
+                    />
                   </span>
                 </h2>
               </ScrollReveal>
@@ -262,12 +289,18 @@ export default function HomePage() {
               <ScrollReveal delay={200}>
                 <div className="relative inline-block mb-8">
                   <div className="bg-secondary text-primary px-8 py-4 relative hover-glow transition-all duration-300">
-                    <span className="text-sm font-bold tracking-wider">NOS EXPERTISES CORE</span>
-                    <div className="absolute top-0 left-0 w-full h-1 bg-primary animate-expand-width"></div>
-                    <div
-                      className="absolute bottom-0 right-0 w-1/2 h-1 bg-primary animate-expand-width"
-                      style={{ animationDelay: "0.3s" }}
-                    ></div>
+                    <span className="text-sm font-bold tracking-wider">
+                      NOS EXPERTISES CORE
+                    </span>
+                    <AnimatedElement
+                      variant="expandX"
+                      className="absolute top-0 left-0 w-full h-1 bg-primary"
+                    />
+                    <AnimatedElement
+                      variant="expandX"
+                      delay={0.3}
+                      className="absolute bottom-0 right-0 w-1/2 h-1 bg-primary"
+                    />
                   </div>
                 </div>
               </ScrollReveal>
@@ -276,7 +309,9 @@ export default function HomePage() {
                 <h2 className="text-4xl lg:text-6xl font-bold text-primary mb-8 tracking-wide leading-tight">
                   LAFARELLE :
                   <br />
-                  <span className="text-secondary">VOTRE PARTENAIRE DE CONFIANCE</span>
+                  <span className="text-secondary">
+                    VOTRE PARTENAIRE DE CONFIANCE
+                  </span>
                 </h2>
               </ScrollReveal>
             </div>
@@ -284,8 +319,17 @@ export default function HomePage() {
             {/* Solutions grid */}
             <div className="grid lg:grid-cols-2 gap-10">
               {solutions.map((solution, index) => (
-                <ScrollReveal key={index} delay={200 + index * 200} direction={index % 2 === 0 ? "left" : "right"}>
-                  <SolutionCard title={solution.title} items={solution.items} icon={solution.icon} index={index} />
+                <ScrollReveal
+                  key={index}
+                  delay={200 + index * 200}
+                  direction={index % 2 === 0 ? "left" : "right"}
+                >
+                  <SolutionCard
+                    title={solution.title}
+                    items={solution.items}
+                    icon={solution.icon}
+                    index={index}
+                  />
                 </ScrollReveal>
               ))}
             </div>
@@ -313,7 +357,9 @@ export default function HomePage() {
             <ScrollReveal delay={200}>
               <div className="relative inline-block mb-12">
                 <div className="bg-secondary text-primary px-8 py-4 relative hover-glow transition-all duration-300">
-                  <span className="text-sm font-bold tracking-wider">CONSULTATION GRATUITE DISPONIBLE</span>
+                  <span className="text-sm font-bold tracking-wider">
+                    CONSULTATION GRATUITE DISPONIBLE
+                  </span>
                   {/* Complex corner design */}
                   <div className="absolute -top-3 -left-3 w-6 h-6 border-4 border-white transition-all duration-300 hover:w-8 hover:h-8"></div>
                   <div className="absolute -bottom-3 -right-3 w-6 h-6 bg-white transition-all duration-300 hover:w-8 hover:h-8"></div>
@@ -327,15 +373,20 @@ export default function HomePage() {
                 <br />
                 <span className="text-secondary relative">
                   GOUVERNANCE IT ?{/* Multiple accent lines */}
-                  <div className="absolute -bottom-6 left-0 w-full h-2 bg-secondary/30 animate-expand-width"></div>
-                  <div
-                    className="absolute -bottom-8 left-1/4 w-1/2 h-1 bg-secondary/50 animate-expand-width"
-                    style={{ animationDelay: "0.3s" }}
-                  ></div>
-                  <div
-                    className="absolute -bottom-10 left-1/3 w-1/3 h-0.5 bg-secondary/70 animate-expand-width"
-                    style={{ animationDelay: "0.6s" }}
-                  ></div>
+                  <AnimatedElement
+                    variant="expandX"
+                    className="absolute -bottom-6 left-0 w-full h-2 bg-secondary/30"
+                  />
+                  <AnimatedElement
+                    variant="expandX"
+                    delay={0.3}
+                    className="absolute -bottom-8 left-1/4 w-1/2 h-1 bg-secondary/50"
+                  />
+                  <AnimatedElement
+                    variant="expandX"
+                    delay={0.6}
+                    className="absolute -bottom-10 left-1/3 w-1/3 h-0.5 bg-secondary/70"
+                  />
                 </span>
               </h2>
             </ScrollReveal>
@@ -343,8 +394,9 @@ export default function HomePage() {
             <ScrollReveal delay={600}>
               <div className="relative bg-white/10 p-8 mb-12 border-4 border-secondary/30 hover-glow transition-all duration-500 hover:bg-white/15">
                 <p className="text-xl mb-6 text-white/90 leading-relaxed">
-                  Discutons de vos projets IT lors d&apos;une consultation gratuite de 30 minutes
-                </p>  
+                  Discutons de vos projets IT lors d&apos;une consultation
+                  gratuite de 30 minutes
+                </p>
                 <div className="absolute top-0 right-0 w-8 h-8 bg-secondary transition-all duration-300 hover:w-10 hover:h-10"></div>
                 <div className="absolute bottom-0 left-0 w-6 h-6 bg-secondary/60 transition-all duration-300 hover:w-8 hover:h-8"></div>
               </div>
@@ -359,5 +411,5 @@ export default function HomePage() {
         </div>
       </section>
     </div>
-  );  
+  );
 }

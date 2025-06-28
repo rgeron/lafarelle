@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 
 interface FloatingElementsProps {
@@ -41,23 +42,18 @@ export default function FloatingElements({
       {elements.map((element) => (
         <div
           key={element.id}
-          className="absolute opacity-10 transition-opacity duration-1000 ease-in-out"
-          style={{
-            left: `${element.x}%`,
-            top: `${element.y}%`,
-          }}
+          className="absolute opacity-10"
+          style={{ left: `${element.x}%`, top: `${element.y}%` }}
         >
-          <div
+          <motion.div
             className="bg-secondary rounded-full"
-            style={{
-              width: `${element.size}px`,
-              height: `${element.size}px`,
-              animationName: "float",
-              animationDuration: `${element.duration}s`,
-              animationTimingFunction: "ease-in-out",
-              animationIterationCount: "infinite",
-              animationDelay: `${element.delay}s`,
-              animationFillMode: "both",
+            style={{ width: `${element.size}px`, height: `${element.size}px` }}
+            animate={{ y: [0, -20, 0] }}
+            transition={{
+              duration: element.duration,
+              delay: element.delay,
+              repeat: Infinity,
+              ease: "easeInOut",
             }}
           />
         </div>

@@ -1,8 +1,9 @@
-import EnhancedCaseStudyCard from "@/components/enhanced-case-study-card"
-import CustomButton from "@/components/custom-button"
-import GeometricBackground from "@/components/geometric-background"
-import { Building2, Factory, Landmark } from "lucide-react"
-import SectionSeparator from "@/components/section-separator"
+import { AnimatedElement } from "@/components/animated-elements";
+import CustomButton from "@/components/custom-button";
+import EnhancedCaseStudyCard from "@/components/enhanced-case-study-card";
+import GeometricBackground from "@/components/geometric-background";
+import SectionSeparator from "@/components/section-separator";
+import { Building2, Factory, Landmark } from "lucide-react";
 
 export default function CaseStudiesPage() {
   const caseStudies = [
@@ -57,7 +58,7 @@ export default function CaseStudiesPage() {
       testimonial:
         "LAFARELLE nous a aidés à transformer une situation critique en opportunité d'amélioration. Leur réactivité et leur professionnalisme ont été exemplaires. Nous recommandons vivement leurs services.",
     },
-  ]
+  ];
 
   return (
     <div className="min-h-screen font-mono">
@@ -69,9 +70,18 @@ export default function CaseStudiesPage() {
           <div className="max-w-5xl mx-auto text-center">
             <div className="relative inline-block mb-12">
               <div className="bg-secondary text-primary px-8 py-4 relative">
-                <span className="text-sm font-bold tracking-wider">SUCCESS STORIES DATABASE</span>
-                <div className="absolute top-0 left-0 w-full h-1 bg-primary"></div>
-                <div className="absolute bottom-0 right-0 w-3/4 h-1 bg-primary"></div>
+                <span className="text-sm font-bold tracking-wider">
+                  SUCCESS STORIES DATABASE
+                </span>
+                <AnimatedElement
+                  variant="expandX"
+                  className="absolute top-0 left-0 w-full h-1 bg-primary"
+                />
+                <AnimatedElement
+                  variant="expandX"
+                  delay={0.3}
+                  className="absolute bottom-0 right-0 w-3/4 h-1 bg-primary"
+                />
               </div>
             </div>
 
@@ -81,8 +91,8 @@ export default function CaseStudiesPage() {
 
             <div className="relative bg-white/10 p-8 border-l-8 border-secondary">
               <p className="text-xl text-white/90 leading-relaxed">
-                Découvrez comment nous avons aidé nos clients à relever leurs défis IT et transformer leurs
-                organisations
+                Découvrez comment nous avons aidé nos clients à relever leurs
+                défis IT et transformer leurs organisations
               </p>
               <div className="absolute top-0 right-0 w-8 h-8 bg-secondary"></div>
               <div className="absolute bottom-0 left-0 w-6 h-6 bg-secondary/60"></div>
@@ -125,7 +135,9 @@ export default function CaseStudiesPage() {
           <div className="max-w-5xl mx-auto">
             <div className="relative inline-block mb-12">
               <div className="bg-secondary text-primary px-8 py-4 relative">
-                <span className="text-sm font-bold tracking-wider">NEXT SUCCESS STORY LOADING</span>
+                <span className="text-sm font-bold tracking-wider">
+                  NEXT SUCCESS STORY LOADING
+                </span>
                 <div className="absolute -top-3 -left-3 w-6 h-6 border-4 border-white"></div>
                 <div className="absolute -bottom-3 -right-3 w-6 h-6 bg-white"></div>
               </div>
@@ -134,12 +146,15 @@ export default function CaseStudiesPage() {
             <h2 className="text-4xl lg:text-6xl font-bold mb-12 tracking-wide leading-tight">
               VOTRE ENTREPRISE POURRAIT ETRE
               <br />
-              <span className="text-secondary">NOTRE PROCHAINE SUCCESS STORY</span>
+              <span className="text-secondary">
+                NOTRE PROCHAINE SUCCESS STORY
+              </span>
             </h2>
 
             <div className="relative bg-white/10 p-8 mb-12 border-4 border-secondary/30">
               <p className="text-xl text-white/90 leading-relaxed">
-                Discutons de vos défis et explorons comment nous pouvons vous accompagner vers le succès
+                Discutons de vos défis et explorons comment nous pouvons vous
+                accompagner vers le succès
               </p>
               <div className="absolute top-0 right-0 w-8 h-8 bg-secondary"></div>
               <div className="absolute bottom-0 left-0 w-6 h-6 bg-secondary/60"></div>
@@ -157,5 +172,5 @@ export default function CaseStudiesPage() {
         </div>
       </section>
     </div>
-  )
+  );
 }

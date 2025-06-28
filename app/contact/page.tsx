@@ -1,8 +1,9 @@
-import CustomButton from "@/components/custom-button"
-import GeometricBackground from "@/components/geometric-background"
-import ScrollReveal from "@/components/scroll-reveal"
-import SectionSeparator from "@/components/section-separator"
-import { Mail, Phone, MapPin, Clock, Send } from "lucide-react"
+import { AnimatedElement } from "@/components/animated-elements";
+import CustomButton from "@/components/custom-button";
+import GeometricBackground from "@/components/geometric-background";
+import ScrollReveal from "@/components/scroll-reveal";
+import SectionSeparator from "@/components/section-separator";
+import { Clock, Mail, MapPin, Phone, Send } from "lucide-react";
 
 export default function ContactPage() {
   return (
@@ -16,9 +17,18 @@ export default function ContactPage() {
             <ScrollReveal delay={200}>
               <div className="relative inline-block mb-12">
                 <div className="bg-secondary text-primary px-8 py-4 relative">
-                  <span className="text-sm font-bold tracking-wider">CONTACT LAFARELLE</span>
-                  <div className="absolute top-0 left-0 w-full h-1 bg-primary"></div>
-                  <div className="absolute bottom-0 right-0 w-2/3 h-1 bg-primary"></div>
+                  <span className="text-sm font-bold tracking-wider">
+                    CONTACT LAFARELLE
+                  </span>
+                  <AnimatedElement
+                    variant="expandX"
+                    className="absolute top-0 left-0 w-full h-1 bg-primary"
+                  />
+                  <AnimatedElement
+                    variant="expandX"
+                    delay={0.3}
+                    className="absolute bottom-0 right-0 w-2/3 h-1 bg-primary"
+                  />
                 </div>
               </div>
             </ScrollReveal>
@@ -32,7 +42,8 @@ export default function ContactPage() {
             <ScrollReveal delay={600}>
               <div className="relative bg-white/10 p-8 border-l-8 border-secondary">
                 <p className="text-xl text-white/90 leading-relaxed">
-                  Discutons de vos projets IT - Consultation gratuite de 30 minutes
+                  Discutons de vos projets IT - Consultation gratuite de 30
+                  minutes
                 </p>
                 <div className="absolute top-0 right-0 w-8 h-8 bg-secondary"></div>
                 <div className="absolute bottom-0 left-0 w-6 h-6 bg-secondary/60"></div>
@@ -60,10 +71,14 @@ export default function ContactPage() {
                   {/* Form Header */}
                   <div className="bg-primary text-white p-8 relative z-10">
                     <div className="flex items-center justify-between mb-4">
-                      <div className="font-mono text-xs tracking-wider text-secondary">FORM CONSULTATION</div>
+                      <div className="font-mono text-xs tracking-wider text-secondary">
+                        FORM CONSULTATION
+                      </div>
                       <Send size={24} className="text-secondary" />
                     </div>
-                    <h3 className="font-mono text-xl font-bold tracking-wide">DEMANDE DE CONSULTATION</h3>
+                    <h3 className="font-mono text-xl font-bold tracking-wide">
+                      DEMANDE DE CONSULTATION
+                    </h3>
 
                     {/* Geometric bottom */}
                     <div className="absolute bottom-0 left-0 w-full h-6 bg-gray-50">
@@ -75,7 +90,8 @@ export default function ContactPage() {
                   {/* Form Content */}
                   <div className="p-8 pt-12 relative z-10">
                     <p className="font-mono text-sm text-gray-600 mb-8 leading-relaxed">
-                      Remplissez ce formulaire et nous vous recontacterons dans les plus brefs délais
+                      Remplissez ce formulaire et nous vous recontacterons dans
+                      les plus brefs délais
                     </p>
 
                     <div className="space-y-6">
@@ -161,16 +177,23 @@ export default function ContactPage() {
                       <div className="flex items-start space-x-3">
                         <div className="w-4 h-4 border-2 border-secondary mt-1 flex-shrink-0"></div>
                         <span className="font-mono text-xs text-gray-600 leading-relaxed">
-                          J&apos;accepte d&apos;être contacté par LAFARELLE concernant ma demande et de recevoir des
-                          informations sur vos services. *
+                          J&apos;accepte d&apos;être contacté par LAFARELLE
+                          concernant ma demande et de recevoir des informations
+                          sur vos services. *
                         </span>
                       </div>
 
-                      <CustomButton variant="primary" size="lg" className="w-full">
+                      <CustomButton
+                        variant="primary"
+                        size="lg"
+                        className="w-full"
+                      >
                         ENVOYER MA DEMANDE
                       </CustomButton>
 
-                      <p className="font-mono text-xs text-gray-500 text-center">* Champs obligatoires</p>
+                      <p className="font-mono text-xs text-gray-500 text-center">
+                        * Champs obligatoires
+                      </p>
                     </div>
                   </div>
 
@@ -191,10 +214,14 @@ export default function ContactPage() {
                   {/* Header */}
                   <div className="bg-secondary text-primary p-8 relative z-10">
                     <div className="flex items-center justify-between mb-4">
-                      <div className="font-mono text-xs tracking-wider">CONTACT_INFO</div>
+                      <div className="font-mono text-xs tracking-wider">
+                        CONTACT_INFO
+                      </div>
                       <Phone size={24} />
                     </div>
-                    <h3 className="font-mono text-xl font-bold tracking-wide">NOS COORDONNEES</h3>
+                    <h3 className="font-mono text-xl font-bold tracking-wide">
+                      NOS COORDONNEES
+                    </h3>
                   </div>
 
                   {/* Content */}
@@ -204,8 +231,12 @@ export default function ContactPage() {
                         <Mail className="text-white" size={20} />
                       </div>
                       <div>
-                        <h4 className="font-mono font-bold text-primary text-sm mb-2">EMAIL</h4>
-                        <p className="font-mono text-sm text-gray-700">contact@lafarelle.fr</p>
+                        <h4 className="font-mono font-bold text-primary text-sm mb-2">
+                          EMAIL
+                        </h4>
+                        <p className="font-mono text-sm text-gray-700">
+                          contact@lafarelle.fr
+                        </p>
                       </div>
                     </div>
 
@@ -214,8 +245,12 @@ export default function ContactPage() {
                         <Phone className="text-white" size={20} />
                       </div>
                       <div>
-                        <h4 className="font-mono font-bold text-primary text-sm mb-2">TELEPHONE</h4>
-                        <p className="font-mono text-sm text-gray-700">A compléter</p>
+                        <h4 className="font-mono font-bold text-primary text-sm mb-2">
+                          TELEPHONE
+                        </h4>
+                        <p className="font-mono text-sm text-gray-700">
+                          A compléter
+                        </p>
                       </div>
                     </div>
 
@@ -224,8 +259,12 @@ export default function ContactPage() {
                         <MapPin className="text-white" size={20} />
                       </div>
                       <div>
-                        <h4 className="font-mono font-bold text-primary text-sm mb-2">ADRESSE</h4>
-                        <p className="font-mono text-sm text-gray-700">A compléter</p>
+                        <h4 className="font-mono font-bold text-primary text-sm mb-2">
+                          ADRESSE
+                        </h4>
+                        <p className="font-mono text-sm text-gray-700">
+                          A compléter
+                        </p>
                       </div>
                     </div>
 
@@ -234,7 +273,9 @@ export default function ContactPage() {
                         <Clock className="text-white" size={20} />
                       </div>
                       <div>
-                        <h4 className="font-mono font-bold text-primary text-sm mb-2">HORAIRES</h4>
+                        <h4 className="font-mono font-bold text-primary text-sm mb-2">
+                          HORAIRES
+                        </h4>
                         <p className="font-mono text-sm text-gray-700">
                           Lundi - Vendredi : 9h00 - 18h00
                           <br />
@@ -255,12 +296,15 @@ export default function ContactPage() {
                       <div className="w-8 h-8 bg-secondary text-primary font-mono text-xs font-bold flex items-center justify-center mr-4">
                         !
                       </div>
-                      <h3 className="font-mono text-lg font-bold">CONSULTATION GRATUITE</h3>
+                      <h3 className="font-mono text-lg font-bold">
+                        CONSULTATION GRATUITE
+                      </h3>
                     </div>
 
                     <p className="font-mono text-sm text-white/90 mb-6 leading-relaxed">
-                      Profitez d&apos;un premier échange gratuit de 30 minutes pour analyser vos besoins et identifier
-                      les opportunités d&apos;optimisation de votre gouvernance IT.
+                      Profitez d&apos;un premier échange gratuit de 30 minutes
+                      pour analyser vos besoins et identifier les opportunités
+                      d&apos;optimisation de votre gouvernance IT.
                     </p>
 
                     <div className="space-y-3">
@@ -272,7 +316,9 @@ export default function ContactPage() {
                       ].map((item, idx) => (
                         <div key={idx} className="flex items-center">
                           <div className="w-2 h-2 bg-secondary mr-3"></div>
-                          <span className="font-mono text-sm text-white/90">{item}</span>
+                          <span className="font-mono text-sm text-white/90">
+                            {item}
+                          </span>
                         </div>
                       ))}
                     </div>
@@ -296,7 +342,9 @@ export default function ContactPage() {
           <ScrollReveal delay={200}>
             <div className="max-w-4xl mx-auto">
               <div className="inline-block bg-primary text-white px-6 py-3 mb-8">
-                <span className="text-sm font-bold tracking-wider">PRET A COMMENCER</span>
+                <span className="text-sm font-bold tracking-wider">
+                  PRET A COMMENCER
+                </span>
               </div>
 
               <h2 className="text-4xl lg:text-5xl font-bold text-primary mb-8 tracking-wide">
@@ -306,8 +354,9 @@ export default function ContactPage() {
               </h2>
 
               <p className="text-xl text-gray-700 mb-10 max-w-2xl mx-auto leading-relaxed">
-                Ne laissez plus les défis IT freiner votre croissance. Contactez-nous dès aujourd&apos;hui pour une
-                consultation gratuite.
+                Ne laissez plus les défis IT freiner votre croissance.
+                Contactez-nous dès aujourd&apos;hui pour une consultation
+                gratuite.
               </p>
 
               <CustomButton variant="secondary" size="lg">
@@ -318,5 +367,5 @@ export default function ContactPage() {
         </div>
       </section>
     </div>
-  )
+  );
 }

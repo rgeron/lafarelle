@@ -1,8 +1,9 @@
-import ValueCard from "@/components/value-card"
-import CustomButton from "@/components/custom-button"
-import GeometricBackground from "@/components/geometric-background"
-import { Target, Eye, Lightbulb, Handshake } from "lucide-react"
-import SectionSeparator from "@/components/section-separator"
+import { AnimatedElement } from "@/components/animated-elements";
+import CustomButton from "@/components/custom-button";
+import GeometricBackground from "@/components/geometric-background";
+import SectionSeparator from "@/components/section-separator";
+import ValueCard from "@/components/value-card";
+import { Eye, Handshake, Lightbulb, Target } from "lucide-react";
 
 export default function AboutPage() {
   const values = [
@@ -20,7 +21,8 @@ export default function AboutPage() {
     },
     {
       title: "INNOVATION",
-      description: "À la pointe des dernières technologies et méthodologies pour offrir des solutions avant-gardistes.",
+      description:
+        "À la pointe des dernières technologies et méthodologies pour offrir des solutions avant-gardistes.",
       icon: Lightbulb,
     },
     {
@@ -29,7 +31,7 @@ export default function AboutPage() {
         "Une relation de confiance sur le long terme, construite sur l&apos;écoute et l&apos;accompagnement personnalisé.",
       icon: Handshake,
     },
-  ]
+  ];
 
   return (
     <div className="min-h-screen font-mono">
@@ -41,16 +43,27 @@ export default function AboutPage() {
           <div className="max-w-5xl mx-auto text-center">
             <div className="relative inline-block mb-12">
               <div className="bg-secondary text-primary px-8 py-4 relative">
-                <span className="text-sm font-bold tracking-wider">ABOUT LAFARELLE SYSTEMS</span>
-                <div className="absolute top-0 left-0 w-full h-1 bg-primary"></div>
-                <div className="absolute bottom-0 right-0 w-2/3 h-1 bg-primary"></div>
+                <span className="text-sm font-bold tracking-wider">
+                  ABOUT LAFARELLE SYSTEMS
+                </span>
+                <AnimatedElement
+                  variant="expandX"
+                  className="absolute top-0 left-0 w-full h-1 bg-primary"
+                />
+                <AnimatedElement
+                  variant="expandX"
+                  delay={0.3}
+                  className="absolute bottom-0 right-0 w-2/3 h-1 bg-primary"
+                />
               </div>
             </div>
 
             <h1 className="text-5xl lg:text-7xl font-bold mb-8 tracking-wide leading-tight">
               LAFARELLE :
               <br />
-              <span className="text-secondary">L EXCELLENCE AU SERVICE DE VOTRE IT</span>
+              <span className="text-secondary">
+                L EXCELLENCE AU SERVICE DE VOTRE IT
+              </span>
             </h1>
           </div>
         </div>
@@ -64,7 +77,9 @@ export default function AboutPage() {
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-16">
               <div className="inline-block bg-primary text-white px-6 py-3 mb-8">
-                <span className="text-sm font-bold tracking-wider">NOTRE HISTOIRE</span>
+                <span className="text-sm font-bold tracking-wider">
+                  NOTRE HISTOIRE
+                </span>
               </div>
             </div>
 
@@ -73,14 +88,17 @@ export default function AboutPage() {
 
               <div className="relative z-10">
                 <p className="text-xl mb-8 leading-relaxed text-gray-700">
-                  Fondée par des experts passionnés de technologie, LAFARELLE s&apos;est imposée comme un acteur de référence
-                  dans le conseil DSI et le Software Asset Management.
+                  Fondée par des experts passionnés de technologie, LAFARELLE
+                  s&apos;est imposée comme un acteur de référence dans le
+                  conseil DSI et le Software Asset Management.
                 </p>
                 <p className="text-lg leading-relaxed text-gray-700">
-                  Notre approche unique combine expertise technique, vision stratégique et accompagnement humain pour
-                  transformer les défis IT en opportunités de croissance. Nous croyons fermement que la maîtrise des
-                  actifs logiciels et une gouvernance IT optimale sont les clés du succès dans l&apos;économie numérique
-                  d&apos;aujourd&apos;hui.
+                  Notre approche unique combine expertise technique, vision
+                  stratégique et accompagnement humain pour transformer les
+                  défis IT en opportunités de croissance. Nous croyons fermement
+                  que la maîtrise des actifs logiciels et une gouvernance IT
+                  optimale sont les clés du succès dans l&apos;économie
+                  numérique d&apos;aujourd&apos;hui.
                 </p>
               </div>
             </div>
@@ -95,7 +113,9 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-block bg-secondary text-primary px-6 py-3 mb-12">
-              <span className="text-sm font-bold tracking-wider">NOTRE MISSION</span>
+              <span className="text-sm font-bold tracking-wider">
+                NOTRE MISSION
+              </span>
             </div>
 
             <div className="relative bg-white p-12 border-l-8 border-secondary">
@@ -103,8 +123,10 @@ export default function AboutPage() {
               <div className="absolute bottom-0 left-0 w-8 h-8 bg-secondary/60"></div>
 
               <p className="text-2xl text-gray-700 leading-relaxed italic">
-                &quot;Accompagner les entreprises dans leur maîtrise technologique en proposant des solutions innovantes
-                et sur mesure qui optimisent leurs performances IT tout en réduisant leurs risques et leurs coûts.&quot;
+                &quot;Accompagner les entreprises dans leur maîtrise
+                technologique en proposant des solutions innovantes et sur
+                mesure qui optimisent leurs performances IT tout en réduisant
+                leurs risques et leurs coûts.&quot;
               </p>
             </div>
           </div>
@@ -122,7 +144,9 @@ export default function AboutPage() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-20">
               <div className="inline-block bg-primary text-white px-8 py-4 mb-8 relative">
-                <span className="text-sm font-bold tracking-wider">NOS VALEURS FONDAMENTALES</span>
+                <span className="text-sm font-bold tracking-wider">
+                  NOS VALEURS FONDAMENTALES
+                </span>
                 <div className="absolute -top-2 -left-2 w-4 h-4 bg-secondary"></div>
                 <div className="absolute -bottom-2 -right-2 w-4 h-4 bg-secondary"></div>
               </div>
@@ -154,7 +178,9 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="max-w-4xl mx-auto">
             <div className="inline-block bg-secondary text-primary px-6 py-3 mb-8">
-              <span className="text-sm font-bold tracking-wider">DECOUVREZ NOTRE APPROCHE</span>
+              <span className="text-sm font-bold tracking-wider">
+                DECOUVREZ NOTRE APPROCHE
+              </span>
             </div>
 
             <h2 className="text-4xl lg:text-5xl font-bold mb-8 tracking-wide">
@@ -179,5 +205,5 @@ export default function AboutPage() {
         </div>
       </section>
     </div>
-  )
+  );
 }

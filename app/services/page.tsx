@@ -1,8 +1,9 @@
-import ServiceCard from "@/components/service-card"
-import CustomButton from "@/components/custom-button"
-import GeometricBackground from "@/components/geometric-background"
-import { Target, Shield, TrendingUp } from "lucide-react"
-import SectionSeparator from "@/components/section-separator"
+import { AnimatedElement } from "@/components/animated-elements";
+import CustomButton from "@/components/custom-button";
+import GeometricBackground from "@/components/geometric-background";
+import SectionSeparator from "@/components/section-separator";
+import ServiceCard from "@/components/service-card";
+import { Shield, Target, TrendingUp } from "lucide-react";
 
 export default function ServicesPage() {
   const services = [
@@ -45,7 +46,7 @@ export default function ServicesPage() {
       ],
       icon: TrendingUp,
     },
-  ]
+  ];
 
   return (
     <div className="min-h-screen font-mono">
@@ -57,9 +58,20 @@ export default function ServicesPage() {
           <div className="max-w-5xl mx-auto text-center">
             <div className="relative inline-block mb-12">
               <div className="bg-secondary text-primary px-8 py-4 relative">
-                <span className="text-sm font-bold tracking-wider">SERVICES PROFESSIONNELS</span>
-                <div className="absolute -top-2 -right-2 w-4 h-4 bg-white"></div>
-                <div className="absolute -bottom-2 -left-2 w-4 h-4 border-2 border-white"></div>
+                <span className="text-sm font-bold tracking-wider">
+                  SERVICES PROFESSIONNELS
+                </span>
+                <AnimatedElement
+                  variant="pulse"
+                  className="absolute -top-2 -right-2 w-4 h-4 bg-white"
+                  duration={3}
+                />
+                <AnimatedElement
+                  variant="pulse"
+                  delay={0.5}
+                  className="absolute -bottom-2 -left-2 w-4 h-4 border-2 border-white"
+                  duration={3}
+                />
               </div>
             </div>
 
@@ -69,7 +81,8 @@ export default function ServicesPage() {
 
             <div className="relative bg-white/10 p-8 border-l-8 border-secondary">
               <p className="text-xl text-white/90 leading-relaxed">
-                Des solutions expertes pour optimiser votre gouvernance IT et transformer vos défis en opportunités
+                Des solutions expertes pour optimiser votre gouvernance IT et
+                transformer vos défis en opportunités
               </p>
               <div className="absolute top-0 right-0 w-6 h-6 bg-secondary"></div>
             </div>
@@ -108,7 +121,9 @@ export default function ServicesPage() {
           <div className="max-w-4xl mx-auto">
             <div className="relative inline-block mb-8">
               <div className="bg-secondary text-primary px-6 py-3">
-                <span className="text-sm font-bold tracking-wider">CONSULTATION PERSONNALISEE</span>
+                <span className="text-sm font-bold tracking-wider">
+                  CONSULTATION PERSONNALISEE
+                </span>
               </div>
             </div>
 
@@ -119,7 +134,8 @@ export default function ServicesPage() {
             </h2>
 
             <p className="text-xl mb-10 text-white/90 max-w-2xl mx-auto leading-relaxed">
-              Discutons de vos défis spécifiques et identifions la solution la plus adaptée
+              Discutons de vos défis spécifiques et identifions la solution la
+              plus adaptée
             </p>
 
             <CustomButton variant="secondary" size="lg">
@@ -129,5 +145,5 @@ export default function ServicesPage() {
         </div>
       </section>
     </div>
-  )
+  );
 }
