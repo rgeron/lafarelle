@@ -154,7 +154,7 @@ export default function HomePage() {
                 <CustomButton variant="secondary" size="lg">
                   OBTENIR UNE CONSULTATION
                 </CustomButton>
-                <CustomButton variant="outline" size="lg">
+                <CustomButton variant="primary" size="lg">
                   VOIR NOS ETUDES DE CAS
                 </CustomButton>
               </div>
