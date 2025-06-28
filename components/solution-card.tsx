@@ -1,17 +1,22 @@
-import type { LucideIcon } from "lucide-react"
+import type { LucideIcon } from "lucide-react";
 
 interface SolutionCardProps {
-  title: string
-  items: string[]
-  icon: LucideIcon
-  index: number
+  title: string;
+  items: string[];
+  icon: LucideIcon;
+  index: number;
 }
 
-export default function SolutionCard({ title, items, icon: Icon, index }: SolutionCardProps) {
+export default function SolutionCard({
+  title,
+  items,
+  icon: Icon,
+  index,
+}: SolutionCardProps) {
   return (
     <div className="relative group">
       {/* Main card */}
-      <div className="bg-white border-4 border-primary relative overflow-hidden hover-lift transition-all duration-500 group-hover:border-secondary min-h-[420px] flex flex-col">
+      <div className="bg-white border-4 border-primary relative overflow-hidden hover-lift transition-all duration-500 group-hover:border-secondary min-h-[300px] flex flex-col">
         {/* Header section */}
         <div className="bg-primary text-white p-6 relative transition-all duration-300 group-hover:bg-secondary group-hover:text-primary">
           <div className="flex items-center justify-between">
@@ -19,7 +24,10 @@ export default function SolutionCard({ title, items, icon: Icon, index }: Soluti
               SERVICE_{String(index + 1).padStart(2, "0")}
             </div>
             <div className="transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12">
-              <Icon size={24} className="text-secondary group-hover:text-primary transition-colors duration-300" />
+              <Icon
+                size={24}
+                className="text-secondary group-hover:text-primary transition-colors duration-300"
+              />
             </div>
           </div>
           <h3 className="font-mono text-lg font-bold mt-4 tracking-wide transition-all duration-300 group-hover:translate-x-1">
@@ -57,5 +65,5 @@ export default function SolutionCard({ title, items, icon: Icon, index }: Soluti
         <div className="absolute bottom-2 left-2 w-1 h-1 bg-primary/40 transition-all duration-700 delay-100 group-hover:w-2 group-hover:h-2 group-hover:bg-primary"></div>
       </div>
     </div>
-  )
+  );
 }
