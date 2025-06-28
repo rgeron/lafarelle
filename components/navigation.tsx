@@ -1,12 +1,13 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Link from "next/link"
-import CustomButton from "./custom-button"
-import { Menu, X } from "lucide-react"
+import { Menu, X } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
+import CustomButton from "./custom-button";
 
 export default function Navigation() {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
     { href: "/", label: "ACCUEIL" },
@@ -14,7 +15,7 @@ export default function Navigation() {
     { href: "/case-studies", label: "ETUDES DE CAS" },
     { href: "/services", label: "SERVICES" },
     { href: "/contact", label: "CONTACT" },
-  ]
+  ];
 
   return (
     <nav className="bg-white border-b-4 border-primary sticky top-0 z-50 font-mono">
@@ -22,9 +23,14 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <div className="bg-primary text-white px-4 py-2">
-              <span className="text-xl font-bold tracking-wider">LAFARELLE</span>
-            </div>
+            <Image
+              src="/images/logo-blue.png"
+              alt="LAFARELLE"
+              width={120}
+              height={40}
+              className="h-10 w-auto"
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -45,7 +51,10 @@ export default function Navigation() {
           </div>
 
           {/* Mobile Menu Button */}
-          <button className="md:hidden bg-primary text-white p-2" onClick={() => setIsOpen(!isOpen)}>
+          <button
+            className="md:hidden bg-primary text-white p-2"
+            onClick={() => setIsOpen(!isOpen)}
+          >
             {isOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
@@ -74,5 +83,5 @@ export default function Navigation() {
         )}
       </div>
     </nav>
-  )
+  );
 }
