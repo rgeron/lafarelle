@@ -4,6 +4,7 @@ import { ContactForm } from "@/components/forms/contact-form";
 import { contactContent } from "@/lib/i18n/contact";
 import { type Locale, getContent } from "@/lib/i18n/index";
 import { Mail, MapPin, Phone } from "lucide-react";
+import { Suspense } from "react";
 
 interface ContactPageProps {
   params: Promise<{ locale: Locale }>;
@@ -50,61 +51,69 @@ export default async function ContactPage({ params }: ContactPageProps) {
       <section className="py-24 bg-white relative overflow-hidden">
         <GeometricBackground variant="section" />
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-12">
-              {/* Contact Info */}
-              <div>
-                <h2 className="text-3xl font-bold text-primary mb-8">
-                  {contact.info.title}
-                </h2>
+          <div className="max-w-6xl mx-auto">
+            {/* Contact Form - Main Focus */}
+            <div className="mb-16">
+              <ScrollReveal delay={200}>
+                <Suspense
+                  fallback={
+                    <div className="animate-pulse bg-gray-200 h-96 rounded-lg"></div>
+                  }
+                >
+                  <ContactForm locale={locale} />
+                </Suspense>
+              </ScrollReveal>
+            </div>
 
-                <div className="space-y-6">
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 bg-secondary flex items-center justify-center mr-4">
+            {/* Contact Info - Secondary */}
+            <div className="max-w-4xl mx-auto">
+              <ScrollReveal delay={400}>
+                <div className="text-center mb-12">
+                  <h2 className="text-2xl font-bold text-primary mb-8">
+                    {contact.info.title}
+                  </h2>
+                </div>
+              </ScrollReveal>
+
+              <ScrollReveal delay={600}>
+                <div className="grid md:grid-cols-3 gap-8 text-center">
+                  <div className="flex flex-col items-center">
+                    <div className="w-12 h-12 bg-secondary flex items-center justify-center mb-4">
                       <Mail className="text-primary" size={20} />
                     </div>
-                    <div>
-                      <h3 className="font-bold text-primary">
-                        {contact.info.email}
-                      </h3>
-                      <p className="text-gray-600">contact@lafarelle.fr</p>
-                    </div>
+                    <h3 className="font-bold text-primary mb-2">
+                      {contact.info.email}
+                    </h3>
+                    <p className="text-gray-600 font-mono text-sm">
+                      contact@lafarelle.fr
+                    </p>
                   </div>
 
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 bg-secondary flex items-center justify-center mr-4">
+                  <div className="flex flex-col items-center">
+                    <div className="w-12 h-12 bg-secondary flex items-center justify-center mb-4">
                       <Phone className="text-primary" size={20} />
                     </div>
-                    <div>
-                      <h3 className="font-bold text-primary">
-                        {contact.info.phone}
-                      </h3>
-                      <p className="text-gray-600">{contact.info.phoneValue}</p>
-                    </div>
+                    <h3 className="font-bold text-primary mb-2">
+                      {contact.info.phone}
+                    </h3>
+                    <p className="text-gray-600 font-mono text-sm">
+                      {contact.info.phoneValue}
+                    </p>
                   </div>
 
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 bg-secondary flex items-center justify-center mr-4">
+                  <div className="flex flex-col items-center">
+                    <div className="w-12 h-12 bg-secondary flex items-center justify-center mb-4">
                       <MapPin className="text-primary" size={20} />
                     </div>
-                    <div>
-                      <h3 className="font-bold text-primary">
-                        {contact.info.address}
-                      </h3>
-                      <p className="text-gray-600">
-                        {contact.info.addressValue}
-                      </p>
-                    </div>
+                    <h3 className="font-bold text-primary mb-2">
+                      {contact.info.address}
+                    </h3>
+                    <p className="text-gray-600 font-mono text-sm">
+                      {contact.info.addressValue}
+                    </p>
                   </div>
                 </div>
-              </div>
-
-              {/* Contact Form */}
-              <div>
-                <ScrollReveal delay={400}>
-                  <ContactForm locale={locale} />
-                </ScrollReveal>
-              </div>
+              </ScrollReveal>
             </div>
           </div>
         </div>

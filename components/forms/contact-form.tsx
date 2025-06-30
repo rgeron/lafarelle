@@ -1,3 +1,16 @@
+"use client";
+
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { contactContent } from "@/lib/i18n/contact";
+import { getContent } from "@/lib/i18n/index";
+import { useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 import CustomButton from "../buttons/custom-button";
 
 interface ContactFormProps {
@@ -5,8 +18,19 @@ interface ContactFormProps {
 }
 
 export function ContactForm({ locale = "fr" }: ContactFormProps) {
+  const searchParams = useSearchParams();
+  const [selectedSubject, setSelectedSubject] = useState("");
+  const contact = getContent(locale, contactContent);
+
+  useEffect(() => {
+    const subjectParam = searchParams.get("subject");
+    if (subjectParam) {
+      setSelectedSubject(subjectParam);
+    }
+  }, [searchParams]);
+
   return (
-    <div className="relative bg-white border-4 border-primary">
+    <div className="relative bg-white border-4 border-primary w-full max-w-4xl mx-auto">
       {/* Top accent */}
       <div className="absolute top-0 left-0 w-full h-2 bg-secondary">
         <div className="absolute left-0 top-0 w-0 h-0 border-b-[8px] border-b-white border-l-[20px] border-l-transparent"></div>
@@ -79,14 +103,30 @@ export function ContactForm({ locale = "fr" }: ContactFormProps) {
           </div>
 
           <div className="relative">
-            <div className="absolute top-0 left-0 bg-secondary text-primary px-2 py-1 text-xs font-bold">
+            <div className="absolute top-0 left-0 bg-secondary text-primary px-2 py-1 text-xs font-bold z-20">
               06
             </div>
-            <input
-              type="text"
-              placeholder={locale === "fr" ? "Sujet *" : "Subject *"}
-              className="w-full pt-8 pb-3 px-4 border-2 border-gray-200 focus:border-secondary font-mono text-sm"
-            />
+            <div className="pt-8 pb-3 px-4 border-2 border-gray-200 focus-within:border-secondary">
+              <Select
+                value={selectedSubject}
+                onValueChange={setSelectedSubject}
+              >
+                <SelectTrigger className="w-full border-0 p-0 h-auto font-mono text-sm focus:ring-0 focus:ring-offset-0 bg-transparent">
+                  <SelectValue placeholder={contact.subjects.placeholder} />
+                </SelectTrigger>
+                <SelectContent>
+                  {contact.subjects.options.map((option) => (
+                    <SelectItem
+                      key={option.value}
+                      value={option.value}
+                      className="font-mono text-sm"
+                    >
+                      {option.label}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
           </div>
 
           <div className="relative">
@@ -99,7 +139,7 @@ export function ContactForm({ locale = "fr" }: ContactFormProps) {
                   ? "Décrivez-nous vos besoins, vos défis IT ou vos questions..."
                   : "Describe your needs, IT challenges or questions..."
               }
-              rows={5}
+              rows={6}
               className="w-full pt-8 pb-3 px-4 border-2 border-gray-200 focus:border-secondary font-mono text-sm resize-none"
             ></textarea>
           </div>

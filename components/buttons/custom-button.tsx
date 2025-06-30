@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import type { ReactNode } from "react";
 
 interface CustomButtonProps {
@@ -8,6 +9,7 @@ interface CustomButtonProps {
   size?: "sm" | "md" | "lg";
   className?: string;
   onClick?: () => void;
+  href?: string;
 }
 
 export default function CustomButton({
@@ -16,9 +18,10 @@ export default function CustomButton({
   size = "md",
   className = "",
   onClick,
+  href,
 }: CustomButtonProps) {
   const baseClasses =
-    "font-mono font-bold tracking-wide transition-all duration-300 border-2 relative overflow-hidden group cursor-pointer";
+    "font-mono font-bold tracking-wide transition-all duration-300 border-2 relative overflow-hidden group cursor-pointer inline-block";
 
   const variants = {
     primary:
@@ -35,20 +38,18 @@ export default function CustomButton({
     lg: "px-8 py-4 text-lg",
   };
 
-  return (
-    <button
-      className={`${baseClasses} ${variants[variant]} ${sizes[size]} ${className} hover-lift`}
-      onClick={onClick}
-      style={{
-        // S'assurer que le bouton est toujours visible
-        opacity: 1,
-        visibility: "visible",
-        transform: "translateY(0)",
-        minHeight: size === "lg" ? "60px" : size === "md" ? "48px" : "40px",
-        position: "relative",
-        zIndex: 10,
-      }}
-    >
+  const buttonStyles = {
+    // S'assurer que le bouton est toujours visible
+    opacity: 1,
+    visibility: "visible" as const,
+    transform: "translateY(0)",
+    minHeight: size === "lg" ? "60px" : size === "md" ? "48px" : "40px",
+    position: "relative" as const,
+    zIndex: 10,
+  };
+
+  const content = (
+    <>
       {/* Content - toujours visible */}
       <span className="relative z-10 transition-transform duration-200 group-hover:scale-105 block">
         {children}
@@ -59,6 +60,28 @@ export default function CustomButton({
 
       {/* Subtle glow - réduit pour éviter les problèmes de visibilité */}
       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+    </>
+  );
+
+  if (href) {
+    return (
+      <Link
+        href={href}
+        className={`${baseClasses} ${variants[variant]} ${sizes[size]} ${className} hover-lift`}
+        style={buttonStyles}
+      >
+        {content}
+      </Link>
+    );
+  }
+
+  return (
+    <button
+      className={`${baseClasses} ${variants[variant]} ${sizes[size]} ${className} hover-lift`}
+      onClick={onClick}
+      style={buttonStyles}
+    >
+      {content}
     </button>
   );
 }

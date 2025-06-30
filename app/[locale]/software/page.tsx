@@ -140,10 +140,18 @@ export default async function SoftwarePage({ params }: SoftwarePageProps) {
 
             <ScrollReveal delay={800}>
               <div className="flex flex-col sm:flex-row gap-6">
-                <CustomButton variant="secondary" size="lg">
+                <CustomButton
+                  variant="secondary"
+                  size="lg"
+                  href={`/${locale}/software/contact?subject=saas-audit`}
+                >
                   {hero.auditButton}
                 </CustomButton>
-                <CustomButton variant="primary" size="lg">
+                <CustomButton
+                  variant="primary"
+                  size="lg"
+                  href={`/${locale}/software/contact?subject=consultation`}
+                >
                   {hero.solutionsButton}
                 </CustomButton>
               </div>
@@ -394,7 +402,11 @@ export default async function SoftwarePage({ params }: SoftwarePageProps) {
             </ScrollReveal>
 
             <ScrollReveal delay={800}>
-              <CustomButton variant="secondary" size="lg">
+              <CustomButton
+                variant="secondary"
+                size="lg"
+                href={`/${locale}/software/contact?subject=saas-audit`}
+              >
                 {cta.button}
               </CustomButton>
             </ScrollReveal>

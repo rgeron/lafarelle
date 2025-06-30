@@ -15,6 +15,14 @@ export interface ContactContent {
     address: string;
     addressValue: string;
   };
+  subjects: {
+    label: string;
+    placeholder: string;
+    options: {
+      value: string;
+      label: string;
+    }[];
+  };
 }
 
 export const contactContent: Record<Locale, ContactContent> = {
@@ -34,6 +42,22 @@ export const contactContent: Record<Locale, ContactContent> = {
       address: "Adresse",
       addressValue: "À compléter",
     },
+    subjects: {
+      label: "Sujet",
+      placeholder: "Sélectionnez un sujet",
+      options: [
+        { value: "consultation", label: "Demande de consultation" },
+        { value: "saas-audit", label: "Audit SaaS complet" },
+        {
+          value: "sam-consulting",
+          label: "Conseil en Software Asset Management",
+        },
+        { value: "integration", label: "Conseil en intégration logicielle" },
+        { value: "solution-editing", label: "Édition de solutions" },
+        { value: "technical-expertise", label: "Expertise technique" },
+        { value: "other", label: "Autre demande" },
+      ],
+    },
   },
   en: {
     hero: {
@@ -50,6 +74,22 @@ export const contactContent: Record<Locale, ContactContent> = {
       phoneValue: "To be completed",
       address: "Address",
       addressValue: "To be completed",
+    },
+    subjects: {
+      label: "Subject",
+      placeholder: "Select a subject",
+      options: [
+        { value: "consultation", label: "Consultation request" },
+        { value: "saas-audit", label: "Complete SaaS audit" },
+        {
+          value: "sam-consulting",
+          label: "Software Asset Management consulting",
+        },
+        { value: "integration", label: "Software integration consulting" },
+        { value: "solution-editing", label: "Solution editing" },
+        { value: "technical-expertise", label: "Technical expertise" },
+        { value: "other", label: "Other request" },
+      ],
     },
   },
 };
