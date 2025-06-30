@@ -11,21 +11,21 @@ import { Shield, Target, TrendingUp, Users } from "lucide-react";
 
 export default function HomePage() {
   const problems = [
-    "Manque de visibilité sur vos licences logicielles ?",
-    "Coûts IT qui explosent sans contrôle ?",
+    "Visibilité limitée sur vos licences logicielles ?",
+    "Coûts informatiques difficiles à maîtriser ?",
     "Risques de non-conformité avec les éditeurs ?",
-    "Difficultés à suivre l'évolution technologique ?",
-    "Manque d'expertise interne en gouvernance IT ?",
-    "Processus de gestion des actifs logiciels inefficaces ?",
+    "Complexité croissante de votre environnement IT ?",
+    "Manque d'expertise en gouvernance logicielle ?",
+    "Processus de gestion des actifs peu efficaces ?",
   ];
 
   const solutions = [
     {
-      title: "CONSEIL DSI STRATEGIQUE",
+      title: "CONSEIL EN INTEGRATION LOGICIELLE",
       icon: Target,
       items: [
-        "Définition de votre stratégie IT",
-        "Audit et optimisation de votre SI",
+        "Analyse de votre environnement logiciel",
+        "Définition de votre stratégie d'intégration",
         "Accompagnement dans vos projets de transformation",
       ],
     },
@@ -34,26 +34,26 @@ export default function HomePage() {
       icon: Shield,
       items: [
         "Audit complet de vos licences",
-        "Optimisation des coûts logiciels",
+        "Optimisation de vos coûts logiciels",
         "Mise en conformité avec les éditeurs",
         "Gestion proactive de vos actifs",
       ],
     },
     {
-      title: "VEILLE TECHNOLOGIQUE",
+      title: "EDITION DE SOLUTIONS",
       icon: TrendingUp,
       items: [
-        "Surveillance des innovations sectorielles",
-        "Analyse des tendances IT",
-        "Recommandations stratégiques personnalisées",
+        "Développement d'outils sur mesure",
+        "Intégration de solutions métier",
+        "Maintenance et évolution applicative",
       ],
     },
     {
-      title: "EQUIPE RESPONSIVE",
+      title: "EXPERTISE TECHNIQUE",
       icon: Users,
       items: [
-        "Disponibilité et réactivité garanties",
-        "Expertise technique de haut niveau",
+        "Équipe spécialisée et réactive",
+        "Méthodologie éprouvée",
         "Accompagnement personnalisé",
       ],
     },
@@ -99,7 +99,7 @@ export default function HomePage() {
               <div className="relative mb-12">
                 <div className="inline-block bg-secondary text-primary px-8 py-4 relative hover-glow transition-all duration-300">
                   <span className="text-sm font-bold tracking-wider">
-                    LAFARELLE SYSTEMS V2.0
+                    LAFARELLE • EXPERTISE SAM
                   </span>
                   {/* Corner cuts */}
                   <div className="absolute top-0 left-0 w-0 h-0 border-r-[12px] border-r-transparent border-t-[12px] border-t-primary transition-all duration-300 hover:border-r-[16px] hover:border-t-[16px]"></div>
@@ -110,10 +110,10 @@ export default function HomePage() {
 
             <ScrollReveal delay={400}>
               <h1 className="text-5xl lg:text-8xl font-bold mb-12 leading-tight tracking-wide">
-                OPTIMISEZ VOTRE
+                MAÎTRISEZ VOS
                 <br />
                 <span className="text-secondary relative">
-                  GOUVERNANCE IT
+                  ACTIFS LOGICIELS
                   {/* Underline accent */}
                   <AnimatedElement
                     variant="expandX"
@@ -132,14 +132,14 @@ export default function HomePage() {
               <div className="max-w-4xl mb-12">
                 <div className="relative bg-white/10 p-8 border-l-8 border-secondary hover-glow transition-all duration-500 hover:bg-white/15">
                   <p className="text-xl lg:text-2xl text-white/90 leading-relaxed mb-4">
-                    Conseil DSI, veille technologique et Software Asset
-                    Management pour une gestion optimale de vos actifs logiciels
+                    LAFARELLE accompagne les entreprises dans leur maîtrise du
+                    Software Asset Management grâce à une expertise technique
+                    reconnue et une approche méthodologique innovante.
                   </p>
                   <p className="text-base text-white/80 leading-relaxed">
-                    LAFARELLE accompagne les entreprises dans leur
-                    transformation digitale grâce à une expertise pointue en
-                    conseil DSI et une approche innovante du Software Asset
-                    Management.
+                    Notre équipe d&apos;experts développe des solutions sur
+                    mesure et optimise vos coûts logiciels tout en garantissant
+                    votre conformité.
                   </p>
 
                   {/* Corner accents */}
@@ -152,10 +152,10 @@ export default function HomePage() {
             <ScrollReveal delay={800}>
               <div className="flex flex-col sm:flex-row gap-6">
                 <CustomButton variant="secondary" size="lg">
-                  OBTENIR UNE CONSULTATION
+                  AUDIT GRATUIT
                 </CustomButton>
                 <CustomButton variant="primary" size="lg">
-                  VOIR NOS ETUDES DE CAS
+                  NOS SOLUTIONS
                 </CustomButton>
               </div>
             </ScrollReveal>
@@ -173,10 +173,10 @@ export default function HomePage() {
               <ScrollReveal delay={200}>
                 <div className="group">
                   <div className="text-4xl font-bold text-primary mb-2 transition-all duration-300 group-hover:text-secondary">
-                    <AnimatedCounter end={15} suffix="+" />
+                    <AnimatedCounter end={10} suffix="+" />
                   </div>
                   <p className="font-mono text-sm text-gray-600 transition-colors duration-300 group-hover:text-gray-800">
-                    Années d&apos;expérience
+                    Années d&apos;expertise
                   </p>
                 </div>
               </ScrollReveal>
@@ -184,10 +184,10 @@ export default function HomePage() {
               <ScrollReveal delay={400}>
                 <div className="group">
                   <div className="text-4xl font-bold text-primary mb-2 transition-all duration-300 group-hover:text-secondary">
-                    <AnimatedCounter end={200} suffix="+" />
+                    <AnimatedCounter end={50} suffix="+" />
                   </div>
                   <p className="font-mono text-sm text-gray-600 transition-colors duration-300 group-hover:text-gray-800">
-                    Projets réalisés
+                    Solutions développées
                   </p>
                 </div>
               </ScrollReveal>
@@ -195,10 +195,10 @@ export default function HomePage() {
               <ScrollReveal delay={600}>
                 <div className="group">
                   <div className="text-4xl font-bold text-primary mb-2 transition-all duration-300 group-hover:text-secondary">
-                    <AnimatedCounter end={98} suffix="%" />
+                    <AnimatedCounter end={95} suffix="%" />
                   </div>
                   <p className="font-mono text-sm text-gray-600 transition-colors duration-300 group-hover:text-gray-800">
-                    Satisfaction client
+                    Optimisation des coûts
                   </p>
                 </div>
               </ScrollReveal>
@@ -237,7 +237,7 @@ export default function HomePage() {
                 <div className="relative inline-block mb-8">
                   <div className="bg-white text-primary px-8 py-4 relative hover-glow transition-all duration-300">
                     <span className="text-sm font-bold tracking-wider">
-                      DIAGNOSTIC ENTREPRISE V1.0
+                      DIAGNOSTIC • ENJEUX IT
                     </span>
                     {/* Geometric accents */}
                     <div className="absolute -top-2 -left-2 w-4 h-4 bg-secondary transition-all duration-300 hover:w-6 hover:h-6"></div>
@@ -248,10 +248,11 @@ export default function HomePage() {
 
               <ScrollReveal delay={400}>
                 <h2 className="text-4xl lg:text-6xl font-bold text-white mb-8 tracking-wide leading-tight">
-                  VOTRE ENTREPRISE FAIT ELLE
+                  IDENTIFIEZ VOS
                   <br />
                   <span className="text-secondary relative">
-                    FACE A CES DEFIS ?{/* Accent lines */}
+                    DÉFIS LOGICIELS
+                    {/* Accent lines */}
                     <AnimatedElement
                       variant="expandX"
                       className="absolute -bottom-4 left-0 w-full h-1 bg-secondary/30"
@@ -290,7 +291,7 @@ export default function HomePage() {
                 <div className="relative inline-block mb-8">
                   <div className="bg-secondary text-primary px-8 py-4 relative hover-glow transition-all duration-300">
                     <span className="text-sm font-bold tracking-wider">
-                      NOS EXPERTISES CORE
+                      NOS EXPERTISES
                     </span>
                     <AnimatedElement
                       variant="expandX"
@@ -307,11 +308,9 @@ export default function HomePage() {
 
               <ScrollReveal delay={400}>
                 <h2 className="text-4xl lg:text-6xl font-bold text-primary mb-8 tracking-wide leading-tight">
-                  LAFARELLE :
+                  DÉVELOPPONS ENSEMBLE
                   <br />
-                  <span className="text-secondary">
-                    VOTRE PARTENAIRE DE CONFIANCE
-                  </span>
+                  <span className="text-secondary">VOS SOLUTIONS</span>
                 </h2>
               </ScrollReveal>
             </div>
@@ -358,7 +357,7 @@ export default function HomePage() {
               <div className="relative inline-block mb-12">
                 <div className="bg-secondary text-primary px-8 py-4 relative hover-glow transition-all duration-300">
                   <span className="text-sm font-bold tracking-wider">
-                    CONSULTATION GRATUITE DISPONIBLE
+                    AUDIT GRATUIT • SANS ENGAGEMENT
                   </span>
                   {/* Complex corner design */}
                   <div className="absolute -top-3 -left-3 w-6 h-6 border-4 border-white transition-all duration-300 hover:w-8 hover:h-8"></div>
@@ -369,10 +368,11 @@ export default function HomePage() {
 
             <ScrollReveal delay={400}>
               <h2 className="text-4xl lg:text-6xl font-bold mb-12 tracking-wide leading-tight">
-                PRET A OPTIMISER VOTRE
+                OPTIMISEZ VOS
                 <br />
                 <span className="text-secondary relative">
-                  GOUVERNANCE IT ?{/* Multiple accent lines */}
+                  COÛTS LOGICIELS
+                  {/* Multiple accent lines */}
                   <AnimatedElement
                     variant="expandX"
                     className="absolute -bottom-6 left-0 w-full h-2 bg-secondary/30"
@@ -394,8 +394,9 @@ export default function HomePage() {
             <ScrollReveal delay={600}>
               <div className="relative bg-white/10 p-8 mb-12 border-4 border-secondary/30 hover-glow transition-all duration-500 hover:bg-white/15">
                 <p className="text-xl mb-6 text-white/90 leading-relaxed">
-                  Discutons de vos projets IT lors d&apos;une consultation
-                  gratuite de 30 minutes
+                  Notre expertise en Software Asset Management vous permet
+                  d&apos;identifier rapidement les enjeux de conformité et
+                  d&apos;optimiser vos coûts logiciels.
                 </p>
                 <div className="absolute top-0 right-0 w-8 h-8 bg-secondary transition-all duration-300 hover:w-10 hover:h-10"></div>
                 <div className="absolute bottom-0 left-0 w-6 h-6 bg-secondary/60 transition-all duration-300 hover:w-8 hover:h-8"></div>
@@ -404,7 +405,7 @@ export default function HomePage() {
 
             <ScrollReveal delay={800}>
               <CustomButton variant="secondary" size="lg">
-                OBTENIR UNE CONSULTATION GRATUITE
+                DEMANDER UN AUDIT GRATUIT
               </CustomButton>
             </ScrollReveal>
           </div>

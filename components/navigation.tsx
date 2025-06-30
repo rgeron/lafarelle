@@ -11,8 +11,8 @@ export default function Navigation() {
 
   const navItems = [
     { href: "/", label: "ACCUEIL" },
-    { href: "/about", label: "A PROPOS" },
-    { href: "/case-studies", label: "ETUDES DE CAS" },
+    { href: "/about", label: "À PROPOS" },
+    { href: "/case-studies", label: "ÉTUDES DE CAS" },
     { href: "/services", label: "SERVICES" },
     { href: "/contact", label: "CONTACT" },
   ];

@@ -1,5 +1,5 @@
-import GeometricBackground from "./geometric-background"
-import { Mail, Phone, MapPin, ArrowRight } from "lucide-react"
+import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
+import GeometricBackground from "./geometric-background";
 
 export default function Footer() {
   return (
@@ -12,15 +12,18 @@ export default function Footer() {
           <div className="md:col-span-2">
             <div className="relative inline-block mb-8">
               <div className="bg-secondary text-primary px-6 py-3 relative">
-                <span className="text-lg font-bold tracking-wider">LAFARELLE</span>
+                <span className="text-lg font-bold tracking-wider">
+                  LAFARELLE
+                </span>
                 <div className="absolute top-0 left-0 w-full h-1 bg-primary"></div>
                 <div className="absolute bottom-0 right-0 w-2/3 h-1 bg-primary"></div>
               </div>
             </div>
 
             <p className="font-mono text-sm text-white/80 mb-8 leading-relaxed max-w-md">
-              Votre partenaire de confiance pour l&apos;optimisation de votre gouvernance IT. Conseil DSI, Software Asset
-              Management et veille technologique.
+              Votre partenaire de confiance pour l&apos;optimisation de votre
+              gouvernance IT. Conseil DSI, Software Asset Management et veille
+              technologique.
             </p>
 
             <div className="space-y-4">
@@ -28,19 +31,25 @@ export default function Footer() {
                 <div className="w-8 h-8 bg-secondary flex items-center justify-center mr-3">
                   <Mail className="text-primary" size={16} />
                 </div>
-                <span className="font-mono text-sm text-white/80">contact@lafarelle.fr</span>
+                <span className="font-mono text-sm text-white/80">
+                  contact@lafarelle.fr
+                </span>
               </div>
               <div className="flex items-center">
                 <div className="w-8 h-8 bg-secondary flex items-center justify-center mr-3">
                   <Phone className="text-primary" size={16} />
                 </div>
-                <span className="font-mono text-sm text-white/80">A compléter</span>
+                <span className="font-mono text-sm text-white/80">
+                  A compléter
+                </span>
               </div>
               <div className="flex items-center">
                 <div className="w-8 h-8 bg-secondary flex items-center justify-center mr-3">
                   <MapPin className="text-primary" size={16} />
                 </div>
-                <span className="font-mono text-sm text-white/80">A compléter</span>
+                <span className="font-mono text-sm text-white/80">
+                  A compléter
+                </span>
               </div>
             </div>
           </div>
@@ -55,7 +64,7 @@ export default function Footer() {
             <ul className="space-y-3">
               {[
                 { href: "/", label: "Accueil" },
-                { href: "/about", label: "A Propos" },
+                { href: "/about", label: "À Propos" },
                 { href: "/services", label: "Services" },
                 { href: "/case-studies", label: "Etudes de Cas" },
                 { href: "/contact", label: "Contact" },
@@ -65,7 +74,10 @@ export default function Footer() {
                     href={item.href}
                     className="font-mono text-sm text-white/80 hover:text-white transition-colors flex items-center group"
                   >
-                    <ArrowRight size={12} className="mr-2 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight
+                      size={12}
+                      className="mr-2 group-hover:translate-x-1 transition-transform"
+                    />
                     {item.label}
                   </a>
                 </li>
@@ -81,16 +93,19 @@ export default function Footer() {
               </div>
             </div>
             <ul className="space-y-3">
-              {["Conseil DSI", "Software Asset Management", "Veille Technologique", "Audit de Conformité"].map(
-                (service) => (
-                  <li key={service}>
-                    <span className="font-mono text-sm text-white/80 flex items-center">
-                      <div className="w-2 h-2 bg-secondary mr-3"></div>
-                      {service}
-                    </span>
-                  </li>
-                ),
-              )}
+              {[
+                "Conseil DSI",
+                "Software Asset Management",
+                "Veille Technologique",
+                "Audit de Conformité",
+              ].map((service) => (
+                <li key={service}>
+                  <span className="font-mono text-sm text-white/80 flex items-center">
+                    <div className="w-2 h-2 bg-secondary mr-3"></div>
+                    {service}
+                  </span>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
@@ -104,7 +119,9 @@ export default function Footer() {
 
             <div className="flex items-center space-x-4">
               <div className="w-12 h-1 bg-secondary"></div>
-              <span className="font-mono text-xs text-white/60 tracking-wider">MADE WITH PRECISION</span>
+              <span className="font-mono text-xs text-white/60 tracking-wider">
+                MADE WITH PRECISION
+              </span>
               <div className="w-8 h-1 bg-secondary/60"></div>
             </div>
           </div>
@@ -115,5 +132,5 @@ export default function Footer() {
       <div className="absolute bottom-0 left-0 w-full h-4 bg-secondary"></div>
       <div className="absolute bottom-4 left-0 w-full h-px bg-white/20"></div>
     </footer>
-  )
+  );
 }
