@@ -1,5 +1,3 @@
-import Footer from "@/components/footer";
-import Navigation from "@/components/navigation";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import type React from "react";
@@ -19,12 +17,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fr">
-      <body className={inter.className}>
-        <Navigation />
-        <main>{children}</main>
-        <Footer />
-      </body>
+    <html>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }
