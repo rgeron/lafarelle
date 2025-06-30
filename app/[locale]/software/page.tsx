@@ -258,7 +258,10 @@ export default async function SoftwarePage({ params }: SoftwarePageProps) {
       </section>
 
       {/* Solutions Section */}
-      <section className="py-24 bg-white relative overflow-hidden">
+      <section
+        id="nos-expertises"
+        className="py-24 bg-white relative overflow-hidden"
+      >
         <GeometricBackground variant="section" />
 
         <div className="container mx-auto px-4 relative z-10">

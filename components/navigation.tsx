@@ -24,7 +24,10 @@ export default function Navigation({ locale }: NavigationProps) {
       href: `/${locale}/software/case-studies`,
       label: t.navigation.caseStudies,
     },
-    { href: `/${locale}/software/services`, label: t.navigation.services },
+    {
+      href: `/${locale}/software#nos-expertises`,
+      label: t.navigation.services,
+    },
     { href: `/${locale}/software/contact`, label: t.navigation.contact },
   ];
 
@@ -64,7 +67,13 @@ export default function Navigation({ locale }: NavigationProps) {
               </Link>
             ))}
 
-            {/* Language Switcher */}
+            <Link href={`/${locale}/software/contact`}>
+              <CustomButton variant="primary" size="sm">
+                {locale === "fr" ? "ÉCHANGEONS" : "LET'S TALK"}
+              </CustomButton>
+            </Link>
+
+            {/* Language Switcher - moved to far right */}
             <Link
               href={getLocalizedPath(getAlternateLocale())}
               className="flex items-center space-x-1 text-primary hover:text-secondary font-bold text-sm tracking-wide transition-colors relative group"
@@ -73,10 +82,6 @@ export default function Navigation({ locale }: NavigationProps) {
               <span>{getAlternateLocale().toUpperCase()}</span>
               <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-secondary group-hover:w-full transition-all duration-300"></div>
             </Link>
-
-            <CustomButton variant="primary" size="sm">
-              {locale === "fr" ? "ÉCHANGEONS" : "LET'S TALK"}
-            </CustomButton>
           </div>
 
           {/* Mobile Menu Button */}
@@ -103,7 +108,15 @@ export default function Navigation({ locale }: NavigationProps) {
                 </Link>
               ))}
 
-              {/* Mobile Language Switcher */}
+              <div className="px-4">
+                <Link href={`/${locale}/software/contact`}>
+                  <CustomButton variant="primary" size="sm">
+                    {locale === "fr" ? "ÉCHANGEONS" : "LET'S TALK"}
+                  </CustomButton>
+                </Link>
+              </div>
+
+              {/* Mobile Language Switcher - moved to bottom */}
               <Link
                 href={getLocalizedPath(getAlternateLocale())}
                 className="flex items-center space-x-1 text-primary hover:text-secondary font-bold text-sm tracking-wide transition-colors px-4 py-2"
@@ -112,12 +125,6 @@ export default function Navigation({ locale }: NavigationProps) {
                 <Globe size={16} />
                 <span>{getAlternateLocale().toUpperCase()}</span>
               </Link>
-
-              <div className="px-4">
-                <CustomButton variant="primary" size="sm">
-                  {locale === "fr" ? "ÉCHANGEONS" : "LET'S TALK"}
-                </CustomButton>
-              </div>
             </div>
           </div>
         )}
