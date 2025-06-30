@@ -1,5 +1,5 @@
-import GeometricBackground from "@/components/geometric-background";
-import ScrollReveal from "@/components/scroll-reveal";
+import ScrollReveal from "@/components/animations/scroll-reveal";
+import GeometricBackground from "@/components/background/geometric-background";
 import { type Locale } from "@/lib/i18n";
 
 interface CaseStudiesPageProps {

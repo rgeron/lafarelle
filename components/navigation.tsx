@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import CustomButton from "./custom-button";
+import CustomButton from "./buttons/custom-button";
 
 interface NavigationProps {
   locale: Locale;
@@ -75,7 +75,7 @@ export default function Navigation({ locale }: NavigationProps) {
             </Link>
 
             <CustomButton variant="primary" size="sm">
-              {locale === "fr" ? "CONSULTATION" : "CONSULTATION"}
+              {locale === "fr" ? "ÉCHANGEONS" : "LET'S TALK"}
             </CustomButton>
           </div>
 
@@ -115,7 +115,7 @@ export default function Navigation({ locale }: NavigationProps) {
 
               <div className="px-4">
                 <CustomButton variant="primary" size="sm">
-                  {locale === "fr" ? "CONSULTATION" : "CONSULTATION"}
+                  {locale === "fr" ? "ÉCHANGEONS" : "LET'S TALK"}
                 </CustomButton>
               </div>
             </div>

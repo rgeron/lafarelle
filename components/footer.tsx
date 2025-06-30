@@ -1,7 +1,7 @@
 import { type Locale, getContent } from "@/lib/i18n";
 import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
 import Link from "next/link";
-import GeometricBackground from "./geometric-background";
+import GeometricBackground from "./background/geometric-background";
 
 interface FooterProps {
   locale: Locale;
@@ -23,16 +23,16 @@ export default function Footer({ locale }: FooterProps) {
 
   const services = {
     fr: [
-      "Conseil DSI",
-      "Software Asset Management",
-      "Veille Technologique",
-      "Audit de Conformité",
+      "Audit SaaS avec Sonar Clarity",
+      "SaaS Management",
+      "Optimisation des coûts",
+      "Analyse d'utilisation",
     ],
     en: [
-      "CIO Advisory",
-      "Software Asset Management",
-      "Technology Watch",
-      "Compliance Audit",
+      "SaaS Audit with Sonar Clarity",
+      "SaaS Management",
+      "Cost Optimization",
+      "Usage Analysis",
     ],
   };
 
@@ -56,8 +56,8 @@ export default function Footer({ locale }: FooterProps) {
 
             <p className="font-mono text-sm text-white/80 mb-8 leading-relaxed max-w-md">
               {locale === "fr"
-                ? "Votre partenaire de confiance pour l'optimisation de votre gouvernance IT. Conseil DSI, Software Asset Management et veille technologique."
-                : "Your trusted partner for optimizing your IT governance. CIO consulting, Software Asset Management and technology watch."}
+                ? "Votre partenaire de confiance pour l'optimisation de votre SaaS management. Audit complet avec Sonar Clarity et accompagnement personnalisé."
+                : "Your trusted partner for optimizing your SaaS management. Complete audit with Sonar Clarity and personalized support."}
             </p>
 
             <div className="space-y-4">

@@ -1,14 +1,18 @@
-import type { LucideIcon } from "lucide-react"
-import GeometricBackground from "./geometric-background"
-
+import type { LucideIcon } from "lucide-react";
+import GeometricBackground from "../background/geometric-background";
 interface ValueCardProps {
-  title: string
-  description: string
-  icon: LucideIcon
-  index: number
+  title: string;
+  description: string;
+  icon: LucideIcon;
+  index: number;
 }
 
-export default function ValueCard({ title, description, icon: Icon, index }: ValueCardProps) {
+export default function ValueCard({
+  title,
+  description,
+  icon: Icon,
+  index,
+}: ValueCardProps) {
   return (
     <div className="relative group">
       {/* Card container with unique shape */}
@@ -65,5 +69,5 @@ export default function ValueCard({ title, description, icon: Icon, index }: Val
         <div className="absolute bottom-16 left-8 w-1 h-1 bg-primary/20 transition-all duration-700 delay-100 group-hover:w-2 group-hover:h-2 group-hover:bg-primary/60"></div>
       </div>
     </div>
-  )
+  );
 }

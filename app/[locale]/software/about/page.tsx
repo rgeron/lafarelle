@@ -1,8 +1,8 @@
-import { AnimatedElement } from "@/components/animated-elements";
-import CustomButton from "@/components/custom-button";
-import GeometricBackground from "@/components/geometric-background";
-import ScrollReveal from "@/components/scroll-reveal";
-import SectionSeparator from "@/components/section-separator";
+import { AnimatedElement } from "@/components/animations/animated-elements";
+import ScrollReveal from "@/components/animations/scroll-reveal";
+import GeometricBackground from "@/components/background/geometric-background";
+import CustomButton from "@/components/buttons/custom-button";
+import SectionSeparator from "@/components/separators/section-separator";
 import ValueCard from "@/components/value-card";
 import { type Locale, getContent } from "@/lib/i18n";
 import { Eye, Handshake, Lightbulb, Target } from "lucide-react";

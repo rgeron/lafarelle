@@ -1,12 +1,12 @@
-import AnimatedCounter from "@/components/animated-counter";
-import { AnimatedElement } from "@/components/animated-elements";
-import CustomButton from "@/components/custom-button";
-import FloatingElements from "@/components/floating-elements";
-import GeometricBackground from "@/components/geometric-background";
-import ProblemCard from "@/components/problem-card";
-import ScrollReveal from "@/components/scroll-reveal";
-import SectionSeparator from "@/components/section-separator";
-import SolutionCard from "@/components/solution-card";
+import AnimatedCounter from "@/components/animations/animated-counter";
+import { AnimatedElement } from "@/components/animations/animated-elements";
+import FloatingElements from "@/components/animations/floating-elements";
+import ScrollReveal from "@/components/animations/scroll-reveal";
+import GeometricBackground from "@/components/background/geometric-background";
+import CustomButton from "@/components/buttons/custom-button";
+import ProblemCard from "@/components/cards/problem-card";
+import SolutionCard from "@/components/cards/solution-card";
+import SectionSeparator from "@/components/separators/section-separator";
 import { type Locale, getContent } from "@/lib/i18n";
 import { Shield, Target, TrendingUp, Users } from "lucide-react";
 

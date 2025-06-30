@@ -1,5 +1,6 @@
-import GeometricBackground from "@/components/geometric-background";
-import ScrollReveal from "@/components/scroll-reveal";
+import ScrollReveal from "@/components/animations/scroll-reveal";
+import GeometricBackground from "@/components/background/geometric-background";
+import { ContactForm } from "@/components/forms/contact-form";
 import { type Locale } from "@/lib/i18n";
 import { Mail, MapPin, Phone } from "lucide-react";
 
@@ -104,23 +105,11 @@ export default async function ContactPage({ params }: ContactPageProps) {
                 </div>
               </div>
 
-              {/* Contact Form Placeholder */}
+              {/* Contact Form */}
               <div>
-                <div className="bg-gray-100 p-8 border-4 border-primary">
-                  <h2 className="text-2xl font-bold text-primary mb-4">
-                    {locale === "fr" ? "Formulaire de contact" : "Contact Form"}
-                  </h2>
-                  <p className="text-gray-600 mb-6">
-                    {locale === "fr"
-                      ? "Le formulaire de contact sera bientôt disponible."
-                      : "Contact form will be available soon."}
-                  </p>
-                  <p className="text-gray-600">
-                    {locale === "fr"
-                      ? "En attendant, n'hésitez pas à nous contacter directement par email."
-                      : "In the meantime, feel free to contact us directly by email."}
-                  </p>
-                </div>
+                <ScrollReveal delay={400}>
+                  <ContactForm locale={locale} />
+                </ScrollReveal>
               </div>
             </div>
           </div>

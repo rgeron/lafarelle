@@ -1,5 +1,5 @@
-import GeometricBackground from "@/components/geometric-background";
-import ScrollReveal from "@/components/scroll-reveal";
+import ScrollReveal from "@/components/animations/scroll-reveal";
+import GeometricBackground from "@/components/background/geometric-background";
 import { type Locale, getContent } from "@/lib/i18n";
 
 interface ServicesPageProps {
@@ -40,8 +40,8 @@ export default async function ServicesPage({ params }: ServicesPageProps) {
             <ScrollReveal delay={600}>
               <p className="text-xl text-white/90 leading-relaxed max-w-3xl mx-auto">
                 {locale === "fr"
-                  ? "Découvrez notre gamme complète de services en Software Asset Management et conseil DSI."
-                  : "Discover our comprehensive range of Software Asset Management and CIO consulting services."}
+                  ? "Découvrez nos services d'accompagnement en SaaS management. Audit complet de l'utilisation des SaaS grâce à Sonar Clarity et analyse détaillée pour optimiser vos coûts."
+                  : "Discover our SaaS management support services. Complete audit of SaaS usage through Sonar Clarity and detailed analysis to optimize your costs."}
               </p>
             </ScrollReveal>
           </div>
