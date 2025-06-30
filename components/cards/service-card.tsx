@@ -1,16 +1,22 @@
-import type { LucideIcon } from "lucide-react"
-import GeometricBackground from "./geometric-background"
+import type { LucideIcon } from "lucide-react";
+import GeometricBackground from "../background/geometric-background";
 
 interface ServiceCardProps {
-  title: string
-  description: string
-  features: string[]
-  icon: LucideIcon
-  index: number
+  title: string;
+  description: string;
+  features: string[];
+  icon: LucideIcon;
+  index: number;
 }
 
-export default function ServiceCard({ title, description, features, icon: Icon, index }: ServiceCardProps) {
-  const isEven = index % 2 === 0
+export default function ServiceCard({
+  title,
+  description,
+  features,
+  icon: Icon,
+  index,
+}: ServiceCardProps) {
+  const isEven = index % 2 === 0;
 
   return (
     <div className="relative group">
@@ -21,7 +27,11 @@ export default function ServiceCard({ title, description, features, icon: Icon, 
         {/* Header section with angled cut */}
         <div className="relative">
           <div
-            className={`${isEven ? "bg-primary" : "bg-secondary"} text-white p-8 relative transition-all duration-300 ${isEven ? "group-hover:bg-secondary" : "group-hover:bg-primary"}`}
+            className={`${
+              isEven ? "bg-primary" : "bg-secondary"
+            } text-white p-8 relative transition-all duration-300 ${
+              isEven ? "group-hover:bg-secondary" : "group-hover:bg-primary"
+            }`}
           >
             {/* Service number */}
             <div className="absolute top-4 left-4 w-8 h-8 bg-white text-primary font-mono text-xs font-bold flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:rotate-12">
@@ -31,9 +41,16 @@ export default function ServiceCard({ title, description, features, icon: Icon, 
             {/* Icon */}
             <div className="flex justify-end mb-4">
               <div
-                className={`${isEven ? "bg-secondary" : "bg-primary"} p-3 transition-all duration-300 group-hover:scale-110 ${isEven ? "group-hover:bg-primary" : "group-hover:bg-secondary"}`}
+                className={`${
+                  isEven ? "bg-secondary" : "bg-primary"
+                } p-3 transition-all duration-300 group-hover:scale-110 ${
+                  isEven ? "group-hover:bg-primary" : "group-hover:bg-secondary"
+                }`}
               >
-                <Icon size={32} className="text-white transition-transform duration-300 group-hover:rotate-12" />
+                <Icon
+                  size={32}
+                  className="text-white transition-transform duration-300 group-hover:rotate-12"
+                />
               </div>
             </div>
 
@@ -45,10 +62,22 @@ export default function ServiceCard({ title, description, features, icon: Icon, 
             {/* Angled bottom cut */}
             <div className="absolute bottom-0 left-0 w-full h-6 bg-white">
               <div
-                className={`absolute top-0 left-0 w-0 h-0 border-l-[100px] border-l-${isEven ? "primary" : "secondary"} border-b-[24px] border-b-transparent transition-all duration-500 ${isEven ? "group-hover:border-l-secondary" : "group-hover:border-l-primary"}`}
+                className={`absolute top-0 left-0 w-0 h-0 border-l-[100px] border-l-${
+                  isEven ? "primary" : "secondary"
+                } border-b-[24px] border-b-transparent transition-all duration-500 ${
+                  isEven
+                    ? "group-hover:border-l-secondary"
+                    : "group-hover:border-l-primary"
+                }`}
               ></div>
               <div
-                className={`absolute top-0 right-0 w-0 h-0 border-r-[100px] border-r-${isEven ? "primary" : "secondary"} border-b-[24px] border-b-transparent transition-all duration-500 ${isEven ? "group-hover:border-r-secondary" : "group-hover:border-r-primary"}`}
+                className={`absolute top-0 right-0 w-0 h-0 border-r-[100px] border-r-${
+                  isEven ? "primary" : "secondary"
+                } border-b-[24px] border-b-transparent transition-all duration-500 ${
+                  isEven
+                    ? "group-hover:border-r-secondary"
+                    : "group-hover:border-r-primary"
+                }`}
               ></div>
             </div>
           </div>
@@ -83,7 +112,11 @@ export default function ServiceCard({ title, description, features, icon: Icon, 
 
         {/* Bottom accent bar */}
         <div
-          className={`absolute bottom-0 left-0 w-full h-2 ${isEven ? "bg-secondary" : "bg-primary"} transition-all duration-500 ${isEven ? "group-hover:bg-primary" : "group-hover:bg-secondary"}`}
+          className={`absolute bottom-0 left-0 w-full h-2 ${
+            isEven ? "bg-secondary" : "bg-primary"
+          } transition-all duration-500 ${
+            isEven ? "group-hover:bg-primary" : "group-hover:bg-secondary"
+          }`}
         >
           <div className="absolute right-0 top-0 w-0 h-0 border-t-[8px] border-t-white border-r-[20px] border-r-transparent transition-all duration-300 group-hover:border-r-[30px]"></div>
         </div>
@@ -96,5 +129,5 @@ export default function ServiceCard({ title, description, features, icon: Icon, 
         <div className="absolute bottom-12 left-12 w-1 h-1 bg-primary/30 transition-all duration-700 delay-200 group-hover:w-2 group-hover:h-2 group-hover:bg-primary"></div>
       </div>
     </div>
-  )
+  );
 }

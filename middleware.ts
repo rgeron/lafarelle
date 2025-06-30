@@ -1,4 +1,4 @@
-import { defaultLocale, locales } from "@/lib/i18n";
+import { defaultLocale, Locale, locales } from "@/lib/i18n";
 import { NextRequest, NextResponse } from "next/server";
 
 export function middleware(request: NextRequest) {
@@ -46,13 +46,13 @@ function getLocale(request: NextRequest): string | undefined {
 
     for (const language of languages) {
       // Check for exact match
-      if (locales.includes(language as any)) {
+      if (locales.includes(language as Locale)) {
         return language;
       }
 
       // Check for language family match (e.g., 'en-US' -> 'en')
       const languageFamily = language.split("-")[0];
-      if (locales.includes(languageFamily as any)) {
+      if (locales.includes(languageFamily as Locale)) {
         return languageFamily;
       }
     }
