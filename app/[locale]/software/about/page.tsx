@@ -4,7 +4,8 @@ import GeometricBackground from "@/components/background/geometric-background";
 import CustomButton from "@/components/buttons/custom-button";
 import ValueCard from "@/components/cards/value-card";
 import SectionSeparator from "@/components/separators/section-separator";
-import { type Locale, getContent } from "@/lib/i18n";
+import { aboutContent } from "@/lib/i18n/about";
+import { type Locale, getContent } from "@/lib/i18n/index";
 import { Eye, Handshake, Lightbulb, Target } from "lucide-react";
 
 interface AboutPageProps {
@@ -13,27 +14,27 @@ interface AboutPageProps {
 
 export default async function AboutPage({ params }: AboutPageProps) {
   const { locale } = await params;
-  const t = getContent(locale);
+  const about = getContent(locale, aboutContent);
 
   const values = [
     {
-      title: t.about.values.excellence.title,
-      description: t.about.values.excellence.description,
+      title: about.values.excellence.title,
+      description: about.values.excellence.description,
       icon: Target,
     },
     {
-      title: t.about.values.transparency.title,
-      description: t.about.values.transparency.description,
+      title: about.values.transparency.title,
+      description: about.values.transparency.description,
       icon: Eye,
     },
     {
-      title: t.about.values.innovation.title,
-      description: t.about.values.innovation.description,
+      title: about.values.innovation.title,
+      description: about.values.innovation.description,
       icon: Lightbulb,
     },
     {
-      title: t.about.values.partnership.title,
-      description: t.about.values.partnership.description,
+      title: about.values.partnership.title,
+      description: about.values.partnership.description,
       icon: Handshake,
     },
   ];
@@ -50,7 +51,7 @@ export default async function AboutPage({ params }: AboutPageProps) {
               <div className="relative inline-block mb-12">
                 <div className="bg-secondary text-primary px-8 py-4 relative">
                   <span className="text-sm font-bold tracking-wider">
-                    {t.about.hero.tagline}
+                    {about.hero.tagline}
                   </span>
                   <AnimatedElement
                     variant="expandX"
@@ -67,9 +68,9 @@ export default async function AboutPage({ params }: AboutPageProps) {
 
             <ScrollReveal delay={400}>
               <h1 className="text-5xl lg:text-7xl font-bold mb-8 tracking-wide leading-tight">
-                {t.about.hero.title}
+                {about.hero.title}
                 <br />
-                <span className="text-secondary">{t.about.hero.subtitle}</span>
+                <span className="text-secondary">{about.hero.subtitle}</span>
               </h1>
             </ScrollReveal>
           </div>
@@ -86,7 +87,7 @@ export default async function AboutPage({ params }: AboutPageProps) {
               <ScrollReveal delay={200}>
                 <div className="inline-block bg-primary text-white px-6 py-3 mb-8">
                   <span className="text-sm font-bold tracking-wider">
-                    {t.about.story.sectionTitle}
+                    {about.story.sectionTitle}
                   </span>
                 </div>
               </ScrollReveal>
@@ -98,10 +99,10 @@ export default async function AboutPage({ params }: AboutPageProps) {
 
                 <div className="relative z-10">
                   <p className="text-xl mb-8 leading-relaxed text-gray-700">
-                    {t.about.story.paragraph1}
+                    {about.story.paragraph1}
                   </p>
                   <p className="text-lg leading-relaxed text-gray-700">
-                    {t.about.story.paragraph2}
+                    {about.story.paragraph2}
                   </p>
                 </div>
               </div>
@@ -119,7 +120,7 @@ export default async function AboutPage({ params }: AboutPageProps) {
             <ScrollReveal delay={200}>
               <div className="inline-block bg-secondary text-primary px-6 py-3 mb-12">
                 <span className="text-sm font-bold tracking-wider">
-                  {t.about.mission.sectionTitle}
+                  {about.mission.sectionTitle}
                 </span>
               </div>
             </ScrollReveal>
@@ -130,7 +131,7 @@ export default async function AboutPage({ params }: AboutPageProps) {
                 <div className="absolute bottom-0 left-0 w-8 h-8 bg-secondary/60"></div>
 
                 <p className="text-2xl text-gray-700 leading-relaxed italic">
-                  &quot;{t.about.mission.quote}&quot;
+                  &quot;{about.mission.quote}&quot;
                 </p>
               </div>
             </ScrollReveal>
@@ -151,7 +152,7 @@ export default async function AboutPage({ params }: AboutPageProps) {
               <ScrollReveal delay={200}>
                 <div className="inline-block bg-primary text-white px-8 py-4 mb-8 relative">
                   <span className="text-sm font-bold tracking-wider">
-                    {t.about.values.sectionTitle}
+                    {about.values.sectionTitle}
                   </span>
                   <div className="absolute -top-2 -left-2 w-4 h-4 bg-secondary"></div>
                   <div className="absolute -bottom-2 -right-2 w-4 h-4 bg-secondary"></div>
@@ -160,9 +161,9 @@ export default async function AboutPage({ params }: AboutPageProps) {
 
               <ScrollReveal delay={400}>
                 <h2 className="text-4xl lg:text-5xl font-bold text-primary mb-8 tracking-wide">
-                  {t.about.values.title}{" "}
+                  {about.values.title}{" "}
                   <span className="text-secondary">
-                    {t.about.values.subtitle}
+                    {about.values.subtitle}
                   </span>
                 </h2>
               </ScrollReveal>
@@ -193,34 +194,34 @@ export default async function AboutPage({ params }: AboutPageProps) {
             <ScrollReveal delay={200}>
               <div className="inline-block bg-secondary text-primary px-6 py-3 mb-8">
                 <span className="text-sm font-bold tracking-wider">
-                  {t.about.finalCta.tagline}
+                  {about.finalCta.tagline}
                 </span>
               </div>
             </ScrollReveal>
 
             <ScrollReveal delay={400}>
               <h2 className="text-4xl lg:text-5xl font-bold mb-8 tracking-wide">
-                {t.about.finalCta.title}
+                {about.finalCta.title}
                 <br />
                 <span className="text-secondary">
-                  {t.about.finalCta.subtitle}
+                  {about.finalCta.subtitle}
                 </span>
               </h2>
             </ScrollReveal>
 
             <ScrollReveal delay={600}>
               <p className="text-xl mb-10 text-white/90 leading-relaxed">
-                {t.about.finalCta.description}
+                {about.finalCta.description}
               </p>
             </ScrollReveal>
 
             <ScrollReveal delay={800}>
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
                 <CustomButton variant="secondary" size="lg">
-                  {t.about.finalCta.button1}
+                  {about.finalCta.button1}
                 </CustomButton>
                 <CustomButton variant="outline" size="lg">
-                  {t.about.finalCta.button2}
+                  {about.finalCta.button2}
                 </CustomButton>
               </div>
             </ScrollReveal>

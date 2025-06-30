@@ -3,8 +3,8 @@ import GeometricBackground from "@/components/background/geometric-background";
 import CustomButton from "@/components/buttons/custom-button";
 import EnhancedCaseStudyCard from "@/components/cards/case-study-card";
 import SectionSeparator from "@/components/separators/section-separator";
-import { type Locale } from "@/lib/i18n";
-import { caseStudiesContent } from "./content";
+import { caseStudiesContent } from "@/lib/i18n/case-studies";
+import { type Locale, getContent } from "@/lib/i18n/index";
 
 interface CaseStudiesPageProps {
   params: Promise<{ locale: Locale }>;
@@ -14,7 +14,7 @@ export default async function CaseStudiesPage({
   params,
 }: CaseStudiesPageProps) {
   const { locale } = await params;
-  const content = caseStudiesContent[locale];
+  const content = getContent(locale, caseStudiesContent);
 
   return (
     <div className="min-h-screen font-mono">

@@ -1,7 +1,8 @@
 import ScrollReveal from "@/components/animations/scroll-reveal";
 import GeometricBackground from "@/components/background/geometric-background";
 import { ContactForm } from "@/components/forms/contact-form";
-import { type Locale } from "@/lib/i18n";
+import { contactContent } from "@/lib/i18n/contact";
+import { type Locale, getContent } from "@/lib/i18n/index";
 import { Mail, MapPin, Phone } from "lucide-react";
 
 interface ContactPageProps {
@@ -10,6 +11,7 @@ interface ContactPageProps {
 
 export default async function ContactPage({ params }: ContactPageProps) {
   const { locale } = await params;
+  const contact = getContent(locale, contactContent);
 
   return (
     <div className="min-h-screen font-mono">
@@ -22,9 +24,7 @@ export default async function ContactPage({ params }: ContactPageProps) {
               <div className="relative inline-block mb-12">
                 <div className="bg-secondary text-primary px-8 py-4 relative">
                   <span className="text-sm font-bold tracking-wider">
-                    {locale === "fr"
-                      ? "ÉCHANGEONS ENSEMBLE"
-                      : "LET'S TALK TOGETHER"}
+                    {contact.hero.tagline}
                   </span>
                 </div>
               </div>
@@ -32,19 +32,15 @@ export default async function ContactPage({ params }: ContactPageProps) {
 
             <ScrollReveal delay={400}>
               <h1 className="text-5xl lg:text-7xl font-bold mb-8 tracking-wide leading-tight">
-                {locale === "fr" ? "NOUS" : "CONTACT"}
+                {contact.hero.title}
                 <br />
-                <span className="text-secondary">
-                  {locale === "fr" ? "CONTACTER" : "US"}
-                </span>
+                <span className="text-secondary">{contact.hero.subtitle}</span>
               </h1>
             </ScrollReveal>
 
             <ScrollReveal delay={600}>
               <p className="text-xl text-white/90 leading-relaxed max-w-3xl mx-auto">
-                {locale === "fr"
-                  ? "Parlons de vos défis IT et explorons les solutions ensemble."
-                  : "Let's talk about your IT challenges and explore solutions together."}
+                {contact.hero.description}
               </p>
             </ScrollReveal>
           </div>
@@ -59,9 +55,7 @@ export default async function ContactPage({ params }: ContactPageProps) {
               {/* Contact Info */}
               <div>
                 <h2 className="text-3xl font-bold text-primary mb-8">
-                  {locale === "fr"
-                    ? "Informations de contact"
-                    : "Contact Information"}
+                  {contact.info.title}
                 </h2>
 
                 <div className="space-y-6">
@@ -70,7 +64,9 @@ export default async function ContactPage({ params }: ContactPageProps) {
                       <Mail className="text-primary" size={20} />
                     </div>
                     <div>
-                      <h3 className="font-bold text-primary">Email</h3>
+                      <h3 className="font-bold text-primary">
+                        {contact.info.email}
+                      </h3>
                       <p className="text-gray-600">contact@lafarelle.fr</p>
                     </div>
                   </div>
@@ -81,11 +77,9 @@ export default async function ContactPage({ params }: ContactPageProps) {
                     </div>
                     <div>
                       <h3 className="font-bold text-primary">
-                        {locale === "fr" ? "Téléphone" : "Phone"}
+                        {contact.info.phone}
                       </h3>
-                      <p className="text-gray-600">
-                        {locale === "fr" ? "À compléter" : "To be completed"}
-                      </p>
+                      <p className="text-gray-600">{contact.info.phoneValue}</p>
                     </div>
                   </div>
 
@@ -95,10 +89,10 @@ export default async function ContactPage({ params }: ContactPageProps) {
                     </div>
                     <div>
                       <h3 className="font-bold text-primary">
-                        {locale === "fr" ? "Adresse" : "Address"}
+                        {contact.info.address}
                       </h3>
                       <p className="text-gray-600">
-                        {locale === "fr" ? "À compléter" : "To be completed"}
+                        {contact.info.addressValue}
                       </p>
                     </div>
                   </div>

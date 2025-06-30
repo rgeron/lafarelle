@@ -1,4 +1,5 @@
 import { Building2, Factory } from "lucide-react";
+import type { Locale } from "./index";
 
 export interface CaseStudy {
   title: string;
@@ -28,7 +29,7 @@ export interface CaseStudiesContent {
   };
 }
 
-export const caseStudiesContent: Record<"fr" | "en", CaseStudiesContent> = {
+export const caseStudiesContent: Record<Locale, CaseStudiesContent> = {
   fr: {
     hero: {
       tagline: "SUCCESS STORIES DATABASE",

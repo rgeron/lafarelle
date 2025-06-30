@@ -7,7 +7,12 @@ import CustomButton from "@/components/buttons/custom-button";
 import ProblemCard from "@/components/cards/problem-card";
 import SolutionCard from "@/components/cards/solution-card";
 import SectionSeparator from "@/components/separators/section-separator";
-import { type Locale, getContent } from "@/lib/i18n";
+import { ctaContent } from "@/lib/i18n/cta";
+import { heroContent } from "@/lib/i18n/hero";
+import { type Locale, getContent } from "@/lib/i18n/index";
+import { problemsContent } from "@/lib/i18n/problems";
+import { solutionsContent } from "@/lib/i18n/solutions";
+import { statsContent } from "@/lib/i18n/stats";
 import { Shield, Target, TrendingUp, Users } from "lucide-react";
 
 interface SoftwarePageProps {
@@ -16,28 +21,34 @@ interface SoftwarePageProps {
 
 export default async function SoftwarePage({ params }: SoftwarePageProps) {
   const { locale } = await params;
-  const t = getContent(locale);
 
-  const solutions = [
+  // Use the new modular approach
+  const hero = getContent(locale, heroContent);
+  const stats = getContent(locale, statsContent);
+  const problems = getContent(locale, problemsContent);
+  const solutions = getContent(locale, solutionsContent);
+  const cta = getContent(locale, ctaContent);
+
+  const solutionsList = [
     {
-      title: t.solutions.integrationConsulting.title,
+      title: solutions.integrationConsulting.title,
       icon: Target,
-      items: t.solutions.integrationConsulting.items,
+      items: solutions.integrationConsulting.items,
     },
     {
-      title: t.solutions.sam.title,
+      title: solutions.sam.title,
       icon: Shield,
-      items: t.solutions.sam.items,
+      items: solutions.sam.items,
     },
     {
-      title: t.solutions.solutionEditing.title,
+      title: solutions.solutionEditing.title,
       icon: TrendingUp,
-      items: t.solutions.solutionEditing.items,
+      items: solutions.solutionEditing.items,
     },
     {
-      title: t.solutions.technicalExpertise.title,
+      title: solutions.technicalExpertise.title,
       icon: Users,
-      items: t.solutions.technicalExpertise.items,
+      items: solutions.technicalExpertise.items,
     },
   ];
 
@@ -81,7 +92,7 @@ export default async function SoftwarePage({ params }: SoftwarePageProps) {
               <div className="relative mb-12">
                 <div className="inline-block bg-secondary text-primary px-8 py-4 relative hover-glow transition-all duration-300">
                   <span className="text-sm font-bold tracking-wider">
-                    {t.hero.tagline}
+                    {hero.tagline}
                   </span>
                   {/* Corner cuts */}
                   <div className="absolute top-0 left-0 w-0 h-0 border-r-[12px] border-r-transparent border-t-[12px] border-t-primary transition-all duration-300 hover:border-r-[16px] hover:border-t-[16px]"></div>
@@ -92,10 +103,10 @@ export default async function SoftwarePage({ params }: SoftwarePageProps) {
 
             <ScrollReveal delay={400}>
               <h1 className="text-5xl lg:text-8xl font-bold mb-12 leading-tight tracking-wide">
-                {t.hero.title}
+                {hero.title}
                 <br />
                 <span className="text-secondary relative">
-                  {t.hero.subtitle}
+                  {hero.subtitle}
                   {/* Underline accent */}
                   <AnimatedElement
                     variant="expandX"
@@ -114,10 +125,10 @@ export default async function SoftwarePage({ params }: SoftwarePageProps) {
               <div className="max-w-4xl mb-12">
                 <div className="relative bg-white/10 p-8 border-l-8 border-secondary hover-glow transition-all duration-500 hover:bg-white/15">
                   <p className="text-xl lg:text-2xl text-white/90 leading-relaxed mb-4">
-                    {t.hero.description}
+                    {hero.description}
                   </p>
                   <p className="text-base text-white/80 leading-relaxed">
-                    {t.hero.description2}
+                    {hero.description2}
                   </p>
 
                   {/* Corner accents */}
@@ -130,10 +141,10 @@ export default async function SoftwarePage({ params }: SoftwarePageProps) {
             <ScrollReveal delay={800}>
               <div className="flex flex-col sm:flex-row gap-6">
                 <CustomButton variant="secondary" size="lg">
-                  {t.hero.auditButton}
+                  {hero.auditButton}
                 </CustomButton>
                 <CustomButton variant="primary" size="lg">
-                  {t.hero.solutionsButton}
+                  {hero.solutionsButton}
                 </CustomButton>
               </div>
             </ScrollReveal>
@@ -154,7 +165,7 @@ export default async function SoftwarePage({ params }: SoftwarePageProps) {
                     <AnimatedCounter end={10} suffix="+" />
                   </div>
                   <p className="font-mono text-sm text-gray-600 transition-colors duration-300 group-hover:text-gray-800">
-                    {t.stats.yearsExperience}
+                    {stats.yearsExperience}
                   </p>
                 </div>
               </ScrollReveal>
@@ -165,7 +176,7 @@ export default async function SoftwarePage({ params }: SoftwarePageProps) {
                     <AnimatedCounter end={50} suffix="+" />
                   </div>
                   <p className="font-mono text-sm text-gray-600 transition-colors duration-300 group-hover:text-gray-800">
-                    {t.stats.solutionsDeveloped}
+                    {stats.solutionsDeveloped}
                   </p>
                 </div>
               </ScrollReveal>
@@ -176,7 +187,7 @@ export default async function SoftwarePage({ params }: SoftwarePageProps) {
                     <AnimatedCounter end={95} suffix="%" />
                   </div>
                   <p className="font-mono text-sm text-gray-600 transition-colors duration-300 group-hover:text-gray-800">
-                    {t.stats.costOptimization}
+                    {stats.costOptimization}
                   </p>
                 </div>
               </ScrollReveal>
@@ -215,7 +226,7 @@ export default async function SoftwarePage({ params }: SoftwarePageProps) {
                 <div className="relative inline-block mb-8">
                   <div className="bg-white text-primary px-8 py-4 relative hover-glow transition-all duration-300">
                     <span className="text-sm font-bold tracking-wider">
-                      {t.problems.sectionTag}
+                      {problems.sectionTag}
                     </span>
                     {/* Geometric accents */}
                     <div className="absolute -top-2 -left-2 w-4 h-4 bg-secondary transition-all duration-300 hover:w-6 hover:h-6"></div>
@@ -226,10 +237,10 @@ export default async function SoftwarePage({ params }: SoftwarePageProps) {
 
               <ScrollReveal delay={400}>
                 <h2 className="text-4xl lg:text-6xl font-bold text-white mb-8 tracking-wide leading-tight">
-                  {t.problems.title}
+                  {problems.title}
                   <br />
                   <span className="text-secondary relative">
-                    {t.problems.subtitle}
+                    {problems.subtitle}
                     {/* Accent lines */}
                     <AnimatedElement
                       variant="expandX"
@@ -247,7 +258,7 @@ export default async function SoftwarePage({ params }: SoftwarePageProps) {
 
             {/* Enhanced problems grid */}
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {t.problems.items.map((problem, index) => (
+              {problems.items.map((problem, index) => (
                 <ScrollReveal key={index} delay={200 + index * 100}>
                   <ProblemCard problem={problem} index={index} />
                 </ScrollReveal>
@@ -272,7 +283,7 @@ export default async function SoftwarePage({ params }: SoftwarePageProps) {
                 <div className="relative inline-block mb-8">
                   <div className="bg-secondary text-primary px-8 py-4 relative hover-glow transition-all duration-300">
                     <span className="text-sm font-bold tracking-wider">
-                      {t.solutions.sectionTag}
+                      {solutions.sectionTag}
                     </span>
                     <AnimatedElement
                       variant="expandX"
@@ -289,16 +300,16 @@ export default async function SoftwarePage({ params }: SoftwarePageProps) {
 
               <ScrollReveal delay={400}>
                 <h2 className="text-4xl lg:text-6xl font-bold text-primary mb-8 tracking-wide leading-tight">
-                  {t.solutions.title}
+                  {solutions.title}
                   <br />
-                  <span className="text-secondary">{t.solutions.subtitle}</span>
+                  <span className="text-secondary">{solutions.subtitle}</span>
                 </h2>
               </ScrollReveal>
             </div>
 
             {/* Solutions grid */}
             <div className="grid lg:grid-cols-2 gap-10">
-              {solutions.map((solution, index) => (
+              {solutionsList.map((solution, index) => (
                 <ScrollReveal
                   key={index}
                   delay={200 + index * 200}
@@ -338,7 +349,7 @@ export default async function SoftwarePage({ params }: SoftwarePageProps) {
               <div className="relative inline-block mb-12">
                 <div className="bg-secondary text-primary px-8 py-4 relative hover-glow transition-all duration-300">
                   <span className="text-sm font-bold tracking-wider">
-                    {t.cta.sectionTag}
+                    {cta.sectionTag}
                   </span>
                   {/* Complex corner design */}
                   <div className="absolute -top-3 -left-3 w-6 h-6 border-4 border-white transition-all duration-300 hover:w-8 hover:h-8"></div>
@@ -349,10 +360,10 @@ export default async function SoftwarePage({ params }: SoftwarePageProps) {
 
             <ScrollReveal delay={400}>
               <h2 className="text-4xl lg:text-6xl font-bold mb-12 tracking-wide leading-tight">
-                {t.cta.title}
+                {cta.title}
                 <br />
                 <span className="text-secondary relative">
-                  {t.cta.subtitle}
+                  {cta.subtitle}
                   {/* Multiple accent lines */}
                   <AnimatedElement
                     variant="expandX"
@@ -375,7 +386,7 @@ export default async function SoftwarePage({ params }: SoftwarePageProps) {
             <ScrollReveal delay={600}>
               <div className="relative bg-white/10 p-8 mb-12 border-4 border-secondary/30 hover-glow transition-all duration-500 hover:bg-white/15">
                 <p className="text-xl mb-6 text-white/90 leading-relaxed">
-                  {t.cta.description}
+                  {cta.description}
                 </p>
                 <div className="absolute top-0 right-0 w-8 h-8 bg-secondary transition-all duration-300 hover:w-10 hover:h-10"></div>
                 <div className="absolute bottom-0 left-0 w-6 h-6 bg-secondary/60 transition-all duration-300 hover:w-8 hover:h-8"></div>
@@ -384,7 +395,7 @@ export default async function SoftwarePage({ params }: SoftwarePageProps) {
 
             <ScrollReveal delay={800}>
               <CustomButton variant="secondary" size="lg">
-                {t.cta.button}
+                {cta.button}
               </CustomButton>
             </ScrollReveal>
           </div>
