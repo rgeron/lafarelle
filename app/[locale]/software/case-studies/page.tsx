@@ -1,6 +1,6 @@
 import GeometricBackground from "@/components/geometric-background";
 import ScrollReveal from "@/components/scroll-reveal";
-import { type Locale, getContent } from "@/lib/i18n";
+import { type Locale } from "@/lib/i18n";
 
 interface CaseStudiesPageProps {
   params: Promise<{ locale: Locale }>;
@@ -10,7 +10,6 @@ export default async function CaseStudiesPage({
   params,
 }: CaseStudiesPageProps) {
   const { locale } = await params;
-  const t = getContent(locale);
 
   return (
     <div className="min-h-screen font-mono">

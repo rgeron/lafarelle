@@ -1,6 +1,6 @@
 import GeometricBackground from "@/components/geometric-background";
 import ScrollReveal from "@/components/scroll-reveal";
-import { type Locale, getContent } from "@/lib/i18n";
+import { type Locale } from "@/lib/i18n";
 import { Mail, MapPin, Phone } from "lucide-react";
 
 interface ContactPageProps {
@@ -9,7 +9,6 @@ interface ContactPageProps {
 
 export default async function ContactPage({ params }: ContactPageProps) {
   const { locale } = await params;
-  const t = getContent(locale);
 
   return (
     <div className="min-h-screen font-mono">
