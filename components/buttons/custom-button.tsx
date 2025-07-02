@@ -10,6 +10,8 @@ interface CustomButtonProps {
   className?: string;
   onClick?: () => void;
   href?: string;
+  type?: "button" | "submit" | "reset";
+  disabled?: boolean;
 }
 
 export default function CustomButton({
@@ -19,6 +21,8 @@ export default function CustomButton({
   className = "",
   onClick,
   href,
+  type = "button",
+  disabled = false,
 }: CustomButtonProps) {
   const baseClasses =
     "font-mono font-bold tracking-wide transition-all duration-300 border-2 relative overflow-hidden group cursor-pointer inline-block";
@@ -77,7 +81,13 @@ export default function CustomButton({
 
   return (
     <button
-      className={`${baseClasses} ${variants[variant]} ${sizes[size]} ${className} hover-lift`}
+      type={type}
+      disabled={disabled}
+      className={`${baseClasses} ${variants[variant]} ${
+        sizes[size]
+      } ${className} hover-lift ${
+        disabled ? "opacity-50 cursor-not-allowed" : ""
+      }`}
       onClick={onClick}
       style={buttonStyles}
     >
