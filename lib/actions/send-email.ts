@@ -13,16 +13,16 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-interface EmailData {
-  firstName: string;
-  lastName: string;
-  company: string;
-  email: string;
-  phone?: string;
-  subject: string;
-  message: string;
-  locale: "fr" | "en";
-}
+// interface EmailData {
+//   firstName: string;
+//   lastName: string;
+//   company: string;
+//   email: string;
+//   phone?: string;
+//   subject: string;
+//   message: string;
+//   locale: "fr" | "en";
+// }
 
 export async function sendEmail(formData: FormData) {
   const firstName = formData.get("firstName") as string;
