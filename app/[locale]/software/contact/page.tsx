@@ -48,7 +48,10 @@ export default async function ContactPage({ params }: ContactPageProps) {
         </div>
       </section>
 
-      <section className="py-24 bg-white relative overflow-hidden">
+      <section
+        id="contact-form"
+        className="py-24 bg-white relative overflow-hidden"
+      >
         <GeometricBackground variant="section" />
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-6xl mx-auto">

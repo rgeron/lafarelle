@@ -66,6 +66,11 @@
   }
 }
 
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
 /* Enhanced accordion animations */
 @keyframes accordion-down {
   from {

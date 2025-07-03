@@ -143,14 +143,14 @@ export default async function SoftwarePage({ params }: SoftwarePageProps) {
                 <CustomButton
                   variant="secondary"
                   size="lg"
-                  href={`/${locale}/software/contact?subject=saas-audit`}
+                  href={`/${locale}/software/contact?subject=saas-audit#contact-form`}
                 >
                   {hero.auditButton}
                 </CustomButton>
                 <CustomButton
                   variant="primary"
                   size="lg"
-                  href={`/${locale}/software/contact?subject=consultation`}
+                  href={`/${locale}/software/contact?subject=consultation#contact-form`}
                 >
                   {hero.solutionsButton}
                 </CustomButton>
@@ -405,7 +405,7 @@ export default async function SoftwarePage({ params }: SoftwarePageProps) {
               <CustomButton
                 variant="secondary"
                 size="lg"
-                href={`/${locale}/software/contact?subject=saas-audit`}
+                href={`/${locale}/software/contact?subject=saas-audit#contact-form`}
               >
                 {cta.button}
               </CustomButton>
