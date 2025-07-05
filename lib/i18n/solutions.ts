@@ -4,19 +4,15 @@ export interface SolutionsContent {
   sectionTag: string;
   title: string;
   subtitle: string;
-  integrationConsulting: {
+  saasMapping: {
     title: string;
     items: string[];
   };
-  sam: {
+  riskAnalysis: {
     title: string;
     items: string[];
   };
-  solutionEditing: {
-    title: string;
-    items: string[];
-  };
-  technicalExpertise: {
+  implementation: {
     title: string;
     items: string[];
   };
@@ -24,78 +20,60 @@ export interface SolutionsContent {
 
 export const solutionsContent: Record<Locale, SolutionsContent> = {
   fr: {
-    sectionTag: "NOS EXPERTISES",
-    title: "DÉVELOPPONS ENSEMBLE",
-    subtitle: "VOS SOLUTIONS",
-    integrationConsulting: {
-      title: "CONSEIL EN SAAS MANAGEMENT",
+    sectionTag: "NOS SERVICES",
+    title: "OPTIMISEZ VOS SOLUTIONS SAAS",
+    subtitle: "AVEC NOTRE EXPERTISE",
+    saasMapping: {
+      title: "CARTOGRAPHIE SAAS EN TEMPS RÉEL",
       items: [
-        "Analyse de votre environnement SaaS",
-        "Définition de votre stratégie d'optimisation",
-        "Accompagnement dans vos projets de rationalisation",
+        "Cartographie complète de vos usages SaaS",
+        "Surveillance en temps réel via Sonar Clarity",
+        "Visibilité totale sur votre parc applicatif",
       ],
     },
-    sam: {
-      title: "AUDIT AVEC SONAR CLARITY",
+    riskAnalysis: {
+      title: "ANALYSE RISQUES & COÛTS",
       items: [
-        "Audit complet de vos outils SaaS",
-        "Identification des usages réels",
-        "Optimisation de vos coûts SaaS",
-        "Rapport d'analyse détaillé",
+        "Analyse des risques de sécurité",
+        "Évaluation des coûts cachés",
+        "Conseil en SaaS management",
       ],
     },
-    solutionEditing: {
-      title: "ACCOMPAGNEMENT PERSONNALISÉ",
+    implementation: {
+      title: "MISE EN ŒUVRE & OPTIMISATION",
       items: [
-        "Analyse des rapports d'audit",
-        "Recommandations sur mesure",
-        "Suivi des optimisations",
-      ],
-    },
-    technicalExpertise: {
-      title: "EXPERTISE TECHNIQUE",
-      items: [
-        "Équipe spécialisée en SaaS management",
-        "Méthodologie éprouvée",
-        "Accompagnement personnalisé",
+        "Recommandations concrètes d'optimisation",
+        "Sécurisation de votre parc applicatif",
+        "Gouvernance et contrôle des coûts",
       ],
     },
   },
   en: {
-    sectionTag: "OUR EXPERTISE",
-    title: "LET'S DEVELOP TOGETHER",
-    subtitle: "YOUR SOLUTIONS",
-    integrationConsulting: {
-      title: "SAAS MANAGEMENT CONSULTING",
+    sectionTag: "OUR SERVICES",
+    title: "OPTIMIZE YOUR SAAS SOLUTIONS",
+    subtitle: "WITH OUR EXPERTISE",
+    saasMapping: {
+      title: "REAL-TIME SAAS MAPPING",
       items: [
-        "Analysis of your SaaS environment",
-        "Definition of your optimization strategy",
-        "Support in your rationalization projects",
+        "Complete mapping of your SaaS usage",
+        "Real-time monitoring via Sonar Clarity",
+        "Total visibility on your application portfolio",
       ],
     },
-    sam: {
-      title: "AUDIT WITH SONAR CLARITY",
+    riskAnalysis: {
+      title: "RISK & COST ANALYSIS",
       items: [
-        "Complete audit of your SaaS tools",
-        "Identification of actual usage",
-        "Optimization of your SaaS costs",
-        "Detailed analysis report",
+        "Security risk analysis",
+        "Hidden cost assessment",
+        "SaaS management consulting",
       ],
     },
-    solutionEditing: {
-      title: "PERSONALIZED SUPPORT",
+    implementation: {
+      title: "IMPLEMENTATION & OPTIMIZATION",
       items: [
-        "Analysis of audit reports",
-        "Tailor-made recommendations",
-        "Optimization follow-up",
-      ],
-    },
-    technicalExpertise: {
-      title: "TECHNICAL EXPERTISE",
-      items: [
-        "Team specialized in SaaS management",
-        "Proven methodology",
-        "Personalized support",
+        "Concrete optimization recommendations",
+        "Application portfolio security",
+        "Governance and cost control",
       ],
     },
   },

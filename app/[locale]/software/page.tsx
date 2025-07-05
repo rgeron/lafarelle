@@ -1,4 +1,3 @@
-import AnimatedCounter from "@/components/animations/animated-counter";
 import { AnimatedElement } from "@/components/animations/animated-elements";
 import FloatingElements from "@/components/animations/floating-elements";
 import ScrollReveal from "@/components/animations/scroll-reveal";
@@ -12,8 +11,7 @@ import { heroContent } from "@/lib/i18n/hero";
 import { type Locale, getContent } from "@/lib/i18n/index";
 import { problemsContent } from "@/lib/i18n/problems";
 import { solutionsContent } from "@/lib/i18n/solutions";
-import { statsContent } from "@/lib/i18n/stats";
-import { Shield, Target, TrendingUp, Users } from "lucide-react";
+import { Shield, Target, TrendingUp } from "lucide-react";
 
 interface SoftwarePageProps {
   params: Promise<{ locale: Locale }>;
@@ -24,31 +22,26 @@ export default async function SoftwarePage({ params }: SoftwarePageProps) {
 
   // Use the new modular approach
   const hero = getContent(locale, heroContent);
-  const stats = getContent(locale, statsContent);
+  // const stats = getContent(locale, statsContent);
   const problems = getContent(locale, problemsContent);
   const solutions = getContent(locale, solutionsContent);
   const cta = getContent(locale, ctaContent);
 
   const solutionsList = [
     {
-      title: solutions.integrationConsulting.title,
+      title: solutions.saasMapping.title,
       icon: Target,
-      items: solutions.integrationConsulting.items,
+      items: solutions.saasMapping.items,
     },
     {
-      title: solutions.sam.title,
+      title: solutions.riskAnalysis.title,
       icon: Shield,
-      items: solutions.sam.items,
+      items: solutions.riskAnalysis.items,
     },
     {
-      title: solutions.solutionEditing.title,
+      title: solutions.implementation.title,
       icon: TrendingUp,
-      items: solutions.solutionEditing.items,
-    },
-    {
-      title: solutions.technicalExpertise.title,
-      icon: Users,
-      items: solutions.technicalExpertise.items,
+      items: solutions.implementation.items,
     },
   ];
 
@@ -160,8 +153,7 @@ export default async function SoftwarePage({ params }: SoftwarePageProps) {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-16 bg-white relative overflow-hidden">
+      {/* <section className="py-16 bg-white relative overflow-hidden">
         <GeometricBackground variant="minimal" />
 
         <div className="container mx-auto px-4">
@@ -199,6 +191,66 @@ export default async function SoftwarePage({ params }: SoftwarePageProps) {
                   </p>
                 </div>
               </ScrollReveal>
+            </div>
+          </div>
+        </div>
+      </section> */}
+
+      {/* Services Section */}
+      <section
+        id="nos-services"
+        className="py-24 bg-white relative overflow-hidden"
+      >
+        <GeometricBackground variant="section" />
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-6xl mx-auto">
+            {/* Section header */}
+            <div className="text-center mb-20">
+              <ScrollReveal delay={200}>
+                <div className="relative inline-block mb-8">
+                  <div className="bg-secondary text-primary px-8 py-4 relative hover-glow transition-all duration-300">
+                    <span className="text-sm font-bold tracking-wider">
+                      {solutions.sectionTag}
+                    </span>
+                    <AnimatedElement
+                      variant="expandX"
+                      className="absolute top-0 left-0 w-full h-1 bg-primary"
+                    />
+                    <AnimatedElement
+                      variant="expandX"
+                      delay={0.3}
+                      className="absolute bottom-0 right-0 w-1/2 h-1 bg-primary"
+                    />
+                  </div>
+                </div>
+              </ScrollReveal>
+
+              <ScrollReveal delay={400}>
+                <h2 className="text-4xl lg:text-6xl font-bold text-primary mb-8 tracking-wide leading-tight">
+                  {solutions.title}
+                  <br />
+                  <span className="text-secondary">{solutions.subtitle}</span>
+                </h2>
+              </ScrollReveal>
+            </div>
+
+            {/* Services grid */}
+            <div className="grid lg:grid-cols-3 gap-8">
+              {solutionsList.map((solution, index) => (
+                <ScrollReveal
+                  key={index}
+                  delay={200 + index * 200}
+                  direction={index % 2 === 0 ? "left" : "right"}
+                >
+                  <SolutionCard
+                    title={solution.title}
+                    items={solution.items}
+                    icon={solution.icon}
+                    index={index}
+                  />
+                </ScrollReveal>
+              ))}
             </div>
           </div>
         </div>
@@ -269,66 +321,6 @@ export default async function SoftwarePage({ params }: SoftwarePageProps) {
               {problems.items.map((problem, index) => (
                 <ScrollReveal key={index} delay={200 + index * 100}>
                   <ProblemCard problem={problem} index={index} />
-                </ScrollReveal>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Solutions Section */}
-      <section
-        id="nos-expertises"
-        className="py-24 bg-white relative overflow-hidden"
-      >
-        <GeometricBackground variant="section" />
-
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-6xl mx-auto">
-            {/* Section header */}
-            <div className="text-center mb-20">
-              <ScrollReveal delay={200}>
-                <div className="relative inline-block mb-8">
-                  <div className="bg-secondary text-primary px-8 py-4 relative hover-glow transition-all duration-300">
-                    <span className="text-sm font-bold tracking-wider">
-                      {solutions.sectionTag}
-                    </span>
-                    <AnimatedElement
-                      variant="expandX"
-                      className="absolute top-0 left-0 w-full h-1 bg-primary"
-                    />
-                    <AnimatedElement
-                      variant="expandX"
-                      delay={0.3}
-                      className="absolute bottom-0 right-0 w-1/2 h-1 bg-primary"
-                    />
-                  </div>
-                </div>
-              </ScrollReveal>
-
-              <ScrollReveal delay={400}>
-                <h2 className="text-4xl lg:text-6xl font-bold text-primary mb-8 tracking-wide leading-tight">
-                  {solutions.title}
-                  <br />
-                  <span className="text-secondary">{solutions.subtitle}</span>
-                </h2>
-              </ScrollReveal>
-            </div>
-
-            {/* Solutions grid */}
-            <div className="grid lg:grid-cols-2 gap-10">
-              {solutionsList.map((solution, index) => (
-                <ScrollReveal
-                  key={index}
-                  delay={200 + index * 200}
-                  direction={index % 2 === 0 ? "left" : "right"}
-                >
-                  <SolutionCard
-                    title={solution.title}
-                    items={solution.items}
-                    icon={solution.icon}
-                    index={index}
-                  />
                 </ScrollReveal>
               ))}
             </div>
