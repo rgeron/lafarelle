@@ -19,14 +19,14 @@ export default function Navigation({ locale }: NavigationProps) {
 
   const navItems = [
     { href: `/${locale}/software`, label: t.navigation.home },
+    {
+      href: `/${locale}/software#nos-expertises`,
+      label: t.navigation.services,
+    },
     { href: `/${locale}/software/about`, label: t.navigation.about },
     {
       href: `/${locale}/software/case-studies`,
       label: t.navigation.caseStudies,
-    },
-    {
-      href: `/${locale}/software#nos-expertises`,
-      label: t.navigation.services,
     },
     { href: `/${locale}/software/contact`, label: t.navigation.contact },
   ];
