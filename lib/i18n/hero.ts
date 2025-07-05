@@ -16,9 +16,9 @@ export const heroContent: Record<Locale, HeroContent> = {
     title: "MAÎTRISEZ VOS",
     subtitle: "OUTILS SAAS",
     description:
-      "LAFARELLE accompagne les entreprises dans l'optimisation de leur SaaS management grâce à Sonar Clarity et une expertise technique reconnue.",
+      "LAFARELLE accompagne les entreprises dans l'optimisation de leur écosystème SaaS.",
     description2:
-      "Notre équipe d'experts analyse vos usages SaaS et vous fournit des rapports détaillés pour optimiser vos coûts et rationaliser vos abonnements.",
+      "Notre équipe d'experts analyse vos usages SaaS et vous fournit des rapports détaillés pour lutter contre le Shadow IT.",
     auditButton: "AUDIT COMPLET DES SAAS",
     solutionsButton: "DISCUTONS DE VOS PROBLÉMATIQUES",
   },
@@ -33,4 +33,4 @@ export const heroContent: Record<Locale, HeroContent> = {
     auditButton: "COMPLETE SAAS AUDIT",
     solutionsButton: "LET'S DISCUSS YOUR CHALLENGES",
   },
-}; 
+};
