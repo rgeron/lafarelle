@@ -1,3 +1,4 @@
+import AnimatedCounter from "@/components/animations/animated-counter";
 import { AnimatedElement } from "@/components/animations/animated-elements";
 import FloatingElements from "@/components/animations/floating-elements";
 import ScrollReveal from "@/components/animations/scroll-reveal";
@@ -11,6 +12,7 @@ import { heroContent } from "@/lib/i18n/hero";
 import { type Locale, getContent } from "@/lib/i18n/index";
 import { problemsContent } from "@/lib/i18n/problems";
 import { solutionsContent } from "@/lib/i18n/solutions";
+import { statsContent } from "@/lib/i18n/stats";
 import { Shield, Target, TrendingUp } from "lucide-react";
 
 interface SoftwarePageProps {
@@ -22,7 +24,7 @@ export default async function SoftwarePage({ params }: SoftwarePageProps) {
 
   // Use the new modular approach
   const hero = getContent(locale, heroContent);
-  // const stats = getContent(locale, statsContent);
+  const stats = getContent(locale, statsContent);
   const problems = getContent(locale, problemsContent);
   const solutions = getContent(locale, solutionsContent);
   const cta = getContent(locale, ctaContent);
@@ -153,7 +155,7 @@ export default async function SoftwarePage({ params }: SoftwarePageProps) {
         </div>
       </section>
 
-      {/* <section className="py-16 bg-white relative overflow-hidden">
+      <section className="py-16 bg-white relative overflow-hidden">
         <GeometricBackground variant="minimal" />
 
         <div className="container mx-auto px-4">
@@ -162,10 +164,10 @@ export default async function SoftwarePage({ params }: SoftwarePageProps) {
               <ScrollReveal delay={200}>
                 <div className="group">
                   <div className="text-4xl font-bold text-primary mb-2 transition-all duration-300 group-hover:text-secondary">
-                    <AnimatedCounter end={10} suffix="+" />
+                    <AnimatedCounter end={65} suffix="%" />
                   </div>
                   <p className="font-mono text-sm text-gray-600 transition-colors duration-300 group-hover:text-gray-800">
-                    {stats.yearsExperience}
+                    {stats.shadowIT}
                   </p>
                 </div>
               </ScrollReveal>
@@ -173,10 +175,10 @@ export default async function SoftwarePage({ params }: SoftwarePageProps) {
               <ScrollReveal delay={400}>
                 <div className="group">
                   <div className="text-4xl font-bold text-primary mb-2 transition-all duration-300 group-hover:text-secondary">
-                    <AnimatedCounter end={50} suffix="+" />
+                    1/3
                   </div>
                   <p className="font-mono text-sm text-gray-600 transition-colors duration-300 group-hover:text-gray-800">
-                    {stats.solutionsDeveloped}
+                    {stats.cyberattacks}
                   </p>
                 </div>
               </ScrollReveal>
@@ -184,17 +186,17 @@ export default async function SoftwarePage({ params }: SoftwarePageProps) {
               <ScrollReveal delay={600}>
                 <div className="group">
                   <div className="text-4xl font-bold text-primary mb-2 transition-all duration-300 group-hover:text-secondary">
-                    <AnimatedCounter end={95} suffix="%" />
+                    <AnimatedCounter end={41} suffix="%" />
                   </div>
                   <p className="font-mono text-sm text-gray-600 transition-colors duration-300 group-hover:text-gray-800">
-                    {stats.costOptimization}
+                    {stats.saasWaste}
                   </p>
                 </div>
               </ScrollReveal>
             </div>
           </div>
         </div>
-      </section> */}
+      </section>
 
       {/* Services Section */}
       <section
