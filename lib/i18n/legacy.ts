@@ -7,7 +7,7 @@ import { heroContent, type HeroContent } from "./hero";
 import type { Locale } from "./index";
 import { navigationContent, type NavigationContent } from "./navigation";
 import { problemsContent, type ProblemsContent } from "./problems";
-import { solutionsContent, type SolutionsContent } from "./solutions";
+import { solutionsContent, type SolutionsContent } from "./services";
 import { statsContent, type StatsContent } from "./stats";
 
 export interface LocaleContent {
