@@ -1,7 +1,7 @@
 import ScrollReveal from "@/components/animations/scroll-reveal";
 import GeometricBackground from "@/components/background/geometric-background";
 import SolutionCard from "@/components/cards/solution-card";
-import { SectionTag } from "@/components/section-tag";
+import { SectionTag } from "@/components/tags/section-tag";
 import { Shield, Target, TrendingUp } from "lucide-react";
 
 interface Solution {

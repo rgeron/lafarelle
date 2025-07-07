@@ -1,6 +1,6 @@
 import ScrollReveal from "@/components/animations/scroll-reveal";
 import CustomButton from "@/components/buttons/custom-button";
-import { SectionTag } from "@/components/section-tag";
+import { SectionTag } from "@/components/tags/section-tag";
 import { type Locale } from "@/lib/i18n/index";
 
 interface CtaSectionProps {

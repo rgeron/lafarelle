@@ -1,6 +1,6 @@
 import ScrollReveal from "@/components/animations/scroll-reveal";
 import GeometricBackground from "@/components/background/geometric-background";
-import { HeroTag } from "@/components/hero-tag";
+import { HeroTag } from "@/components/tags/hero-tag";
 import {
   Breadcrumb,
   BreadcrumbItem,

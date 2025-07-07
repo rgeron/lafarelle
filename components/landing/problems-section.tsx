@@ -2,7 +2,7 @@ import { AnimatedElement } from "@/components/animations/animated-elements";
 import ScrollReveal from "@/components/animations/scroll-reveal";
 import GeometricBackground from "@/components/background/geometric-background";
 import { ProblemCard } from "@/components/cards/problem-card";
-import { SectionTag } from "@/components/section-tag";
+import { SectionTag } from "@/components/tags/section-tag";
 
 interface Problem {
   emoji: string;
