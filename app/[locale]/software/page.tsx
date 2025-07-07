@@ -5,7 +5,6 @@ import {
   SolutionsSection,
   StatsSection,
 } from "@/components/landing";
-import SectionSeparator from "@/components/separators/section-separator";
 import { ctaContent } from "@/lib/i18n/cta";
 import { heroContent } from "@/lib/i18n/hero";
 import { type Locale, getContent } from "@/lib/i18n/index";
@@ -31,7 +30,6 @@ export default async function SoftwarePage({ params }: SoftwarePageProps) {
     <div className="min-h-screen font-mono">
       <HeroSection locale={locale} hero={hero} />
       <StatsSection stats={stats} />
-      <SectionSeparator variant="zigzag" />
       <ProblemsSection problems={problems} />
       <SolutionsSection solutions={solutions} />
       <CtaSection locale={locale} cta={cta} />
