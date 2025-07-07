@@ -1,11 +1,12 @@
-import { AnimatedElement } from "@/components/animations/animated-elements";
 import ScrollReveal from "@/components/animations/scroll-reveal";
 import GeometricBackground from "@/components/background/geometric-background";
 import CustomButton from "@/components/buttons/custom-button";
 import ValueCard from "@/components/cards/value-card";
+import { PageHero } from "@/components/page-hero";
 import SectionSeparator from "@/components/separators/section-separator";
 import { aboutContent } from "@/lib/i18n/about";
 import { type Locale, getContent } from "@/lib/i18n/index";
+import { navigationContent } from "@/lib/i18n/navigation";
 import { Eye, Handshake, Lightbulb, Target } from "lucide-react";
 
 interface AboutPageProps {
@@ -15,6 +16,7 @@ interface AboutPageProps {
 export default async function AboutPage({ params }: AboutPageProps) {
   const { locale } = await params;
   const about = getContent(locale, aboutContent);
+  const nav = navigationContent[locale];
 
   const values = [
     {
@@ -42,40 +44,14 @@ export default async function AboutPage({ params }: AboutPageProps) {
   return (
     <div className="min-h-screen font-mono">
       {/* Hero Section */}
-      <section className="bg-primary text-white py-24 relative overflow-hidden">
-        <GeometricBackground variant="hero" />
-
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-5xl mx-auto text-center">
-            <ScrollReveal delay={200}>
-              <div className="relative inline-block mb-12">
-                <div className="bg-secondary text-primary px-8 py-4 relative">
-                  <span className="text-sm font-bold tracking-wider">
-                    {about.hero.tagline}
-                  </span>
-                  <AnimatedElement
-                    variant="expandX"
-                    className="absolute top-0 left-0 w-full h-1 bg-primary"
-                  />
-                  <AnimatedElement
-                    variant="expandX"
-                    delay={0.3}
-                    className="absolute bottom-0 right-0 w-2/3 h-1 bg-primary"
-                  />
-                </div>
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal delay={400}>
-              <h1 className="text-5xl lg:text-7xl font-bold mb-8 tracking-wide leading-tight">
-                {about.hero.title}
-                <br />
-                <span className="text-secondary">{about.hero.subtitle}</span>
-              </h1>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        locale={locale}
+        tagline={about.hero.tagline}
+        tagVariant="animated"
+        title={about.hero.title}
+        subtitle={about.hero.subtitle}
+        breadcrumbs={[{ label: nav.about }]}
+      />
 
       {/* Story Section */}
       <section className="py-24 bg-white relative overflow-hidden">

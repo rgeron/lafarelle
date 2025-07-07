@@ -1,10 +1,11 @@
-import { AnimatedElement } from "@/components/animations/animated-elements";
 import GeometricBackground from "@/components/background/geometric-background";
 import CustomButton from "@/components/buttons/custom-button";
 import EnhancedCaseStudyCard from "@/components/cards/case-study-card";
+import { PageHero } from "@/components/page-hero";
 import SectionSeparator from "@/components/separators/section-separator";
 import { caseStudiesContent } from "@/lib/i18n/case-studies";
 import { type Locale, getContent } from "@/lib/i18n/index";
+import { navigationContent } from "@/lib/i18n/navigation";
 
 interface CaseStudiesPageProps {
   params: Promise<{ locale: Locale }>;
@@ -15,47 +16,19 @@ export default async function CaseStudiesPage({
 }: CaseStudiesPageProps) {
   const { locale } = await params;
   const content = getContent(locale, caseStudiesContent);
+  const nav = navigationContent[locale];
 
   return (
     <div className="min-h-screen font-mono">
       {/* Hero Section */}
-      <section className="bg-primary text-white py-24 relative overflow-hidden">
-        <GeometricBackground variant="hero" />
-
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-5xl mx-auto text-center">
-            <div className="relative inline-block mb-12">
-              <div className="bg-secondary text-primary px-8 py-4 relative">
-                <span className="text-sm font-bold tracking-wider">
-                  {content.hero.tagline}
-                </span>
-                <AnimatedElement
-                  variant="expandX"
-                  className="absolute top-0 left-0 w-full h-1 bg-primary"
-                />
-                <AnimatedElement
-                  variant="expandX"
-                  delay={0.3}
-                  className="absolute bottom-0 right-0 w-3/4 h-1 bg-primary"
-                />
-              </div>
-            </div>
-
-            <h1 className="text-5xl lg:text-7xl font-bold mb-8 tracking-wide leading-tight">
-              {content.hero.title}{" "}
-              <span className="text-secondary">{content.hero.subtitle}</span>
-            </h1>
-
-            <div className="relative bg-white/10 p-8 border-l-8 border-secondary">
-              <p className="text-xl text-white/90 leading-relaxed">
-                {content.hero.description}
-              </p>
-              <div className="absolute top-0 right-0 w-8 h-8 bg-secondary"></div>
-              <div className="absolute bottom-0 left-0 w-6 h-6 bg-secondary/60"></div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        locale={locale}
+        tagline={content.hero.tagline}
+        tagVariant="animated"
+        title={content.hero.title}
+        subtitle={content.hero.subtitle}
+        breadcrumbs={[{ label: nav.caseStudies }]}
+      />
 
       {/* Case Studies */}
       <section className="py-24 bg-gray-50 relative overflow-hidden">

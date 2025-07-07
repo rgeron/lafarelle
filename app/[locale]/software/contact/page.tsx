@@ -1,8 +1,10 @@
 import ScrollReveal from "@/components/animations/scroll-reveal";
 import GeometricBackground from "@/components/background/geometric-background";
 import { ContactForm } from "@/components/forms/contact-form";
+import { PageHero } from "@/components/page-hero";
 import { contactContent } from "@/lib/i18n/contact";
 import { type Locale, getContent } from "@/lib/i18n/index";
+import { navigationContent } from "@/lib/i18n/navigation";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { Suspense } from "react";
 
@@ -13,40 +15,18 @@ interface ContactPageProps {
 export default async function ContactPage({ params }: ContactPageProps) {
   const { locale } = await params;
   const contact = getContent(locale, contactContent);
+  const nav = navigationContent[locale];
 
   return (
     <div className="min-h-screen font-mono">
-      <section className="bg-primary text-white py-24 relative overflow-hidden">
-        <GeometricBackground variant="hero" />
-
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-5xl mx-auto text-center">
-            <ScrollReveal delay={200}>
-              <div className="relative inline-block mb-12">
-                <div className="bg-secondary text-primary px-8 py-4 relative">
-                  <span className="text-sm font-bold tracking-wider">
-                    {contact.hero.tagline}
-                  </span>
-                </div>
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal delay={400}>
-              <h1 className="text-5xl lg:text-7xl font-bold mb-8 tracking-wide leading-tight">
-                {contact.hero.title}
-                <br />
-                <span className="text-secondary">{contact.hero.subtitle}</span>
-              </h1>
-            </ScrollReveal>
-
-            <ScrollReveal delay={600}>
-              <p className="text-xl text-white/90 leading-relaxed max-w-3xl mx-auto">
-                {contact.hero.description}
-              </p>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        locale={locale}
+        tagline={contact.hero.tagline}
+        tagVariant="animated"
+        title={contact.hero.title}
+        subtitle={contact.hero.subtitle}
+        breadcrumbs={[{ label: nav.contact }]}
+      />
 
       <section
         id="contact-form"

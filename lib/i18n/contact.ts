@@ -29,8 +29,8 @@ export const contactContent: Record<Locale, ContactContent> = {
   fr: {
     hero: {
       tagline: "ÉCHANGEONS ENSEMBLE",
-      title: "NOUS",
-      subtitle: "CONTACTER",
+      title: "NOUS CONTACTER",
+      subtitle: "",
       description:
         "Parlons de vos défis IT et explorons les solutions ensemble.",
     },
