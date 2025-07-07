@@ -20,7 +20,7 @@ interface ProblemsSectionProps {
 
 export function ProblemsSection({ problems }: ProblemsSectionProps) {
   return (
-    <section className="py-24 bg-primary text-white relative overflow-hidden">
+    <section className="py-16 bg-primary text-white relative overflow-hidden">
       <GeometricBackground variant="section" />
 
       {/* Additional geometric elements */}

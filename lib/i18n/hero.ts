@@ -18,7 +18,7 @@ export const heroContent: Record<Locale, HeroContent> = {
     description:
       "LAFARELLE accompagne les entreprises dans l'optimisation de leur écosystème SaaS.",
     description2:
-      "Notre équipe d'experts analyse vos usages SaaS et vous fournit des rapports détaillés pour lutter contre le Shadow IT.",
+      "Notre équipe d'experts analyse vos usages SaaS et vous fournit des rapports détaillés et une méthode d'action pour lutter contre le Shadow IT.",
     auditButton: "AUDIT COMPLET DES SAAS",
     solutionsButton: "DISCUTONS DE VOS PROBLÉMATIQUES",
   },

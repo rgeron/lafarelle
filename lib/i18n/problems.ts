@@ -13,9 +13,9 @@ export interface ProblemsContent {
 
 export const problemsContent: Record<Locale, ProblemsContent> = {
   fr: {
-    sectionTag: "DIAGNOSTIC • ENJEUX SAAS",
-    title: "AVEZ-VOUS CES",
-    subtitle: "PROBLÈMES ?",
+    sectionTag: "SHADOW IT • ENJEUX SAAS",
+    title: "AVEZ-VOUS CES PROBLÈMES ?",
+    subtitle: "",
     items: [
       {
         emoji: "🔍",

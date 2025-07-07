@@ -42,7 +42,7 @@ export function SolutionsSection({ solutions }: SolutionsSectionProps) {
   return (
     <section
       id="nos-services"
-      className="py-24 bg-white relative overflow-hidden"
+      className="py-16 bg-white relative overflow-hidden"
     >
       <GeometricBackground variant="section" />
 
