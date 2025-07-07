@@ -21,8 +21,8 @@ export interface SolutionsContent {
 export const solutionsContent: Record<Locale, SolutionsContent> = {
   fr: {
     sectionTag: "NOTRE DÉMARCHE",
-    title: "ACCOMPAGNEMENT",
-    subtitle: "EN 3 ÉTAPES",
+    title: "ACCOMPAGNEMENT EN 3 ÉTAPES",
+    subtitle: "",
     saasMapping: {
       title: "CARTOGRAPHIE & AUDIT",
       items: [
