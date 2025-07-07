@@ -10,19 +10,19 @@ export interface CtaContent {
 
 export const ctaContent: Record<Locale, CtaContent> = {
   fr: {
-    sectionTag: "SONAR CLARITY • AUDIT SAAS",
-    title: "OPTIMISEZ VOS",
-    subtitle: "COÛTS SAAS",
+    sectionTag: "BESOIN D'ACCOMPAGNEMENT ?",
+    title: "PARLONS DE VOS",
+    subtitle: "DÉFIS IT",
     description:
-      "Notre expertise en SaaS management avec Sonar Clarity vous permet d'identifier rapidement l'utilisation de vos outils SaaS et d'optimiser vos coûts.",
-    button: "AUDIT COMPLET DES SAAS",
+      "Notre expertise en conseil IT et gestion d'actifs logiciels vous aide à optimiser vos processus et réduire vos coûts technologiques.",
+    button: "CONTACTEZ-NOUS",
   },
   en: {
-    sectionTag: "SONAR CLARITY • SAAS AUDIT",
-    title: "OPTIMIZE YOUR",
-    subtitle: "SAAS COSTS",
+    sectionTag: "NEED GUIDANCE?",
+    title: "LET'S DISCUSS YOUR",
+    subtitle: "IT CHALLENGES",
     description:
-      "Our SaaS management expertise with Sonar Clarity allows you to quickly identify your SaaS tools usage and optimize your costs.",
-    button: "COMPLETE SAAS AUDIT",
+      "Our expertise in IT consulting and software asset management helps you optimize your processes and reduce your technology costs.",
+    button: "CONTACT US",
   },
 };

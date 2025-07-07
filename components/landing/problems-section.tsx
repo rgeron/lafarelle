@@ -2,6 +2,7 @@ import { AnimatedElement } from "@/components/animations/animated-elements";
 import ScrollReveal from "@/components/animations/scroll-reveal";
 import GeometricBackground from "@/components/background/geometric-background";
 import { ProblemCard } from "@/components/cards/problem-card";
+import { SectionTag } from "@/components/section-tag";
 
 interface Problem {
   emoji: string;
@@ -44,15 +45,8 @@ export function ProblemsSection({ problems }: ProblemsSectionProps) {
           {/* Enhanced section header */}
           <div className="text-center mb-20">
             <ScrollReveal delay={200}>
-              <div className="relative inline-block mb-8">
-                <div className="bg-white text-primary px-8 py-4 relative hover-glow transition-all duration-300">
-                  <span className="text-sm font-bold tracking-wider">
-                    {problems.sectionTag}
-                  </span>
-                  {/* Geometric accents */}
-                  <div className="absolute -top-2 -left-2 w-4 h-4 bg-secondary transition-all duration-300 hover:w-6 hover:h-6"></div>
-                  <div className="absolute -bottom-2 -right-2 w-4 h-4 bg-secondary transition-all duration-300 hover:w-6 hover:h-6"></div>
-                </div>
+              <div className="mb-8">
+                <SectionTag variant="dark">{problems.sectionTag}</SectionTag>
               </div>
             </ScrollReveal>
 

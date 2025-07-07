@@ -1,7 +1,7 @@
-import { AnimatedElement } from "@/components/animations/animated-elements";
 import ScrollReveal from "@/components/animations/scroll-reveal";
 import GeometricBackground from "@/components/background/geometric-background";
 import SolutionCard from "@/components/cards/solution-card";
+import { SectionTag } from "@/components/section-tag";
 import { Shield, Target, TrendingUp } from "lucide-react";
 
 interface Solution {
@@ -51,21 +51,8 @@ export function SolutionsSection({ solutions }: SolutionsSectionProps) {
           {/* Section header */}
           <div className="text-center mb-20">
             <ScrollReveal delay={200}>
-              <div className="relative inline-block mb-8">
-                <div className="bg-secondary text-primary px-8 py-4 relative hover-glow transition-all duration-300">
-                  <span className="text-sm font-bold tracking-wider">
-                    {solutions.sectionTag}
-                  </span>
-                  <AnimatedElement
-                    variant="expandX"
-                    className="absolute top-0 left-0 w-full h-1 bg-primary"
-                  />
-                  <AnimatedElement
-                    variant="expandX"
-                    delay={0.3}
-                    className="absolute bottom-0 right-0 w-1/2 h-1 bg-primary"
-                  />
-                </div>
+              <div className="mb-8">
+                <SectionTag variant="light">{solutions.sectionTag}</SectionTag>
               </div>
             </ScrollReveal>
 

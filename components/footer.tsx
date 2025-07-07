@@ -38,6 +38,9 @@ export default function Footer({ locale }: FooterProps) {
 
   return (
     <footer className="bg-primary text-white relative overflow-hidden">
+      {/* Ligne de séparation blanche en haut */}
+      <div className="absolute top-0 left-0 w-full h-1 bg-secondary"></div>
+
       <GeometricBackground variant="section" />
 
       <div className="container mx-auto px-4 py-16 relative z-10">
