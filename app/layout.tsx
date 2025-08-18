@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import type React from "react";
 import "./globals.css";
 
@@ -18,7 +19,14 @@ export default function RootLayout({
 }) {
   return (
     <html>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Script
+          src="https://sdk.hellouniweb.com/base/main.js"
+          data-account="fOHVazcE"
+          strategy="afterInteractive"
+        />
+        {children}
+      </body>
     </html>
   );
 }
