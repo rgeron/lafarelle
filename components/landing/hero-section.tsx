@@ -4,6 +4,7 @@ import ScrollReveal from "@/components/animations/scroll-reveal";
 import GeometricBackground from "@/components/background/geometric-background";
 import CustomButton from "@/components/buttons/custom-button";
 import { type Locale } from "@/lib/i18n/index";
+import Image from "next/image";
 
 interface HeroSectionProps {
   locale: Locale;
@@ -104,21 +105,32 @@ export function HeroSection({ locale, hero }: HeroSectionProps) {
           </ScrollReveal>
 
           <ScrollReveal delay={800}>
-            <div className="flex flex-col sm:flex-row gap-6">
-              <CustomButton
-                variant="secondary"
-                size="lg"
-                href={`/${locale}/software/contact?subject=saas-audit#contact-form`}
-              >
-                {hero.auditButton}
-              </CustomButton>
-              <CustomButton
-                variant="primary"
-                size="lg"
-                href={`/${locale}/software/contact?subject=consultation#contact-form`}
-              >
-                {hero.solutionsButton}
-              </CustomButton>
+            <div className="flex flex-col sm:flex-row gap-6 items-center">
+              <div className="flex gap-6">
+                <CustomButton
+                  variant="secondary"
+                  size="lg"
+                  href={`/${locale}/software/contact?subject=saas-audit#contact-form`}
+                >
+                  {hero.auditButton}
+                </CustomButton>
+                <CustomButton
+                  variant="primary"
+                  size="lg"
+                  href={`/${locale}/software/contact?subject=consultation#contact-form`}
+                >
+                  {hero.solutionsButton}
+                </CustomButton>
+              </div>
+              <div className="relative">
+                <Image
+                  src="/images/melancolie.png"
+                  alt=""
+                  width={300}
+                  height={400}
+                  className="opacity-80 hover:opacity-100 transition-opacity duration-300"
+                />
+              </div>
             </div>
           </ScrollReveal>
         </div>
